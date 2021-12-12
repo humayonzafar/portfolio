@@ -21,7 +21,7 @@ function DesktopNav({links}) {
             {links.map((linkItem, index) => {
                 if (linkItem.type !== `dropdown`) {
                     return (
-                        <Link href={linkItem.link} key={index.toString()} >
+                        <Link href={linkItem.link} key={index.toString()} passHref>
                             <ChakraLink
                                 key={index.toString()}
                                 color={colorMode === 'light' ? `gray.800` : `white`}
@@ -94,7 +94,7 @@ function DesktopNav({links}) {
                             </MenuButton>
                             <MenuList>
                                 {linkItem.links.map((item, i) => (
-                                    <Link href={item.link} key={`${i.toString()}MenuLink`}>
+                                    <Link href={item.link} key={`${i.toString()}MenuLink`} passHref>
                                         <MenuItem as='a' sx={{cursor: `pointer`}} key={i.toString()}>
                                             {item.name}
                                         </MenuItem>
