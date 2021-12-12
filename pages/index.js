@@ -12,6 +12,7 @@ import {
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { NextSeo } from 'next-seo';
+import AboutTerminal from "../src/components/AboutTerminal";
 
 export default function Home(){
   const [imageLoad, setImageLoad] = useState(false);
@@ -48,7 +49,7 @@ export default function Home(){
                     flexGrow={3}
                     borderRadius='2xl'
                     boxSize='250px'
-                    src='./static/images/profile.jpeg'
+                    src='/static/images/profile.png'
                     objectFit='cover'
                     alt='Humayon Zafar'
                     onLoad={() => setImageLoad(true)}
@@ -106,7 +107,7 @@ export default function Home(){
                 </chakra.p>
               </Flex>
             </Flex>
-            {!['base', 'sm'].includes(bp)}
+            {!['base', 'sm'].includes(bp) && <AboutTerminal />}
           </Flex>
         </Box>
       </>
