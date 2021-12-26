@@ -21,9 +21,10 @@ function DesktopNav({links}) {
             {links.map((linkItem, index) => {
                 if (linkItem.type !== `dropdown`) {
                     return (
-                        <Link href={linkItem.link} key={index.toString()} passHref>
+                        <Link href={linkItem.link} key={index.toString()}  passHref>
                             <ChakraLink
                                 key={index.toString()}
+                                isExternal={linkItem?.isExternal}
                                 color={colorMode === 'light' ? `gray.800` : `white`}
                                 fontSize='lg'
                                 fontWeight='semibold'

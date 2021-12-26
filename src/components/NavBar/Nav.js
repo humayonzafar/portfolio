@@ -18,16 +18,13 @@ import {useEffect} from 'react';
 
 const links = [
     {
-        name: 'Blog',
-        link: '/blog',
-    },
-    {
-        name: `Projects`,
-        link: `/projects`,
+        name: `Contact`,
+        link: `/contact`,
     },
     {
         name: `Resume`,
-        link: `/resume`,
+        link: `https://drive.google.com/file/d/15ovXVBOQ0sD1jXHRkY8mPv99o4wgWY7J/view`,
+        isExternal: true
     },
 ];
 
@@ -100,17 +97,17 @@ function Nav() {
                                         bottom: 1,
                                         left: 0,
                                         bg: colorMode === 'light'
-                                                ? transparentize(`brand.500`, 0.46)
-                                                : transparentize(`brand.500`, 0.46),
+                                            ? transparentize(`brand.500`, 0.46)
+                                            : transparentize(`brand.500`, 0.36),
                                         zIndex: -1,
                                     }}
                                     _hover={{
                                         _after: {
                                             width: `100%`,
                                         },
-                                        color: colorMode === 'light' ? `gray.900` : `gray.900`,
+                                        color: colorMode === 'light' ? `gray.900` : `white`,
                                     }}
-                                    color={colorMode === 'light' ? 'gray.900' : 'gray.900'}
+                                    color={colorMode === 'light' ? 'gray.900' : 'white'}
                                 >
                                    Humayon Zafar
                                 </ChakraLink>
