@@ -31,7 +31,7 @@ import {FaLinkedinIn, FaGithub, FaInstagram, FaStackOverflow} from 'react-icons/
 import {useForm} from "react-hook-form";
 import Link from "next/link";
 
-export default function contact() {
+export default function Contact() {
     const {colorMode} = useColorMode();
     const {register, handleSubmit, formState: {errors, isSubmitting}, reset} = useForm({mode: 'onChange'});
     const onSubmit = (formData) => {
@@ -165,8 +165,9 @@ export default function contact() {
                                                     <InputGroup borderColor="#E0E1E7">
                                                         <InputLeftElement
                                                             pointerEvents="none"
-                                                            children={<MdPerson color="gray.800"/>}
-                                                        />
+                                                        >
+                                                            <MdPerson color="gray.800"/>
+                                                        </InputLeftElement>
                                                         <Input type="text" size="md"
                                                                name="name"
                                                                placeholder="Humayon Zafar"
@@ -182,8 +183,9 @@ export default function contact() {
                                                     <InputGroup borderColor="#E0E1E7">
                                                         <InputLeftElement
                                                             pointerEvents="none"
-                                                            children={<MdEmail color="gray.800"/>}
-                                                        />
+                                                        >
+                                                        <MdEmail color="gray.800"/>
+                                                        </InputLeftElement>
                                                         <Input type="email" size="md" name="email"
                                                                placeholder="humayonhere@gmail.com"
                                                                {...register('email', {
