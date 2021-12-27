@@ -49,10 +49,10 @@ export default function Home(){
                     flexGrow={3}
                     borderRadius='2xl'
                     boxSize='250px'
-                    src='/static/images/profile.png'
+                    src='https://res.cloudinary.com/humayoncloud/image/upload/v1640542101/Portfolio/profile-pic_dovm5o.png'
                     objectFit='cover'
                     alt='Humayon Zafar'
-                    onLoad={() => setImageLoad(true)}
+                    onLoad={(e) => setImageLoad(true)}
                 />
               </Skeleton>
               <Flex
@@ -107,7 +107,7 @@ export default function Home(){
                 </chakra.p>
               </Flex>
             </Flex>
-            {!['base', 'sm'].includes(bp) && <AboutTerminal />}
+            {<AboutTerminal />}
           </Flex>
         </Box>
       </>

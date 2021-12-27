@@ -79,7 +79,7 @@ const Statement = ({
                     visibility={showResult || initialState ? 'visible' : 'hidden'}
                     alignSelf='flex-start'
                     dangerouslySetInnerHTML={{
-                        __html: initialState ? 'Press enter to see what I am about' : result,
+                        __html: initialState ? 'Press press enter to learn more...' : result,
                     }}
                 />
             </VStack>
