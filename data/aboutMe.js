@@ -30,7 +30,7 @@ const info = (props) => [
         input: 'contactMe',
         result: `["<a style="${style(
             props
-        )}" rel="noopener" href="https://www.linkedin.com/in/humayon-zafar/">LinkedIn</a>", "<a style="${style(
+        )}" rel="noopener" href="https://www.linkedin.com/in/humayonzafar/">LinkedIn</a>", "<a style="${style(
             props
         )}" rel="noopener" href="https://github.com/humayonzafar">Github</a>", "<a rel="noopener" style="${style(
             props

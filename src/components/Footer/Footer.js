@@ -88,7 +88,7 @@ const Footer = ()=> {
                     <SocialIcons label='GitHub' href='https://github.com/humayonzafar'>
                         <FaGithub />
                     </SocialIcons>
-                    <SocialIcons label='LinkedIn' href='https://www.linkedin.com/in/humayon-zafar/'>
+                    <SocialIcons label='LinkedIn' href='https://www.linkedin.com/in/humayonzafar/'>
                         <FaLinkedin />
                     </SocialIcons>
                     <SocialIcons label='Instagram' href='https://www.instagram.com/humayon.zafar/'>
