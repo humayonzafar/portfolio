@@ -227,7 +227,7 @@ export default function Contact() {
                                                         xl: 'right'
                                                     }}>
                                                         <Button
-                                                            bg={useColorModeValue('brand.600', 'brand.600')}
+                                                            bg='brand.600'
                                                             color='white'
                                                             mt='1rem'
                                                             _hover={{color: 'white', bg: 'brand.800'}}
