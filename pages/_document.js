@@ -2,6 +2,7 @@ import {ColorModeScript} from '@chakra-ui/react';
 
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Document, {Html, Head, Main, NextScript} from 'next/document';
+import theme from '../src/theme'
 
 export default class MyDocument extends Document {
     render() {
@@ -36,7 +37,7 @@ export default class MyDocument extends Document {
                     <meta name="theme-color" content="#ffffff"/>
                 </Head>
                 <body id={'de_body'}>
-                <ColorModeScript/>
+                <ColorModeScript initialColorMode={theme.config.initialColorMode} />
                 <Main/>
                 <NextScript/>
                 </body>

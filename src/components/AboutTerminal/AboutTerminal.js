@@ -11,7 +11,6 @@ import {
 import content from '/data/aboutMe';
 import styled from '@emotion/styled';
 import Statement from '../Statement';
-import ProfilePic from './'
 const StatusButton = styled(chakra.span)`
   height: 12px;
   width: 12px;

@@ -40,10 +40,17 @@ const Statement = ({
                 }, 500);
             }
         }
-        if (visibleIndex === 0 && displayedIndex === 0) {
-            setTimeout(() => {
-                setDisplayedIndex(i => i + 1);
-            }, 3000);
+        if (visibleIndex === 0) {
+            if( displayedIndex === 0){
+                setTimeout(() => {
+                    setDisplayedIndex(i => i + 1);
+                }, 3000);
+            }
+            else if(displayedIndex <= 50){
+                setTimeout(() => {
+                    setDisplayedIndex(displayedIndex + 1);
+                }, 25 + Math.random() * 75);
+            }
             return;
         }
         setTimeout(() => {
