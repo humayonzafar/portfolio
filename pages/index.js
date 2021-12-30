@@ -7,16 +7,13 @@ import {
   useColorModeValue,
   Skeleton,
   Link as ChakraLink,
-  useBreakpoint,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { NextSeo } from 'next-seo';
 import AboutTerminal from "../src/components/AboutTerminal";
 
 export default function Home(){
-  const [imageLoad, setImageLoad] = useState(false);
-  const bp = useBreakpoint();
   return (
       <>
         <NextSeo title='Home' />
@@ -44,7 +41,6 @@ export default function Home(){
                 mx='auto'
                 my={{ xl: '16' }}
             >
-              <Skeleton isLoaded={imageLoad} boxSize='250px' borderRadius='2xl' m='auto'>
                 <Image
                     flexGrow={3}
                     borderRadius='2xl'
@@ -52,9 +48,7 @@ export default function Home(){
                     src='https://res.cloudinary.com/humayoncloud/image/upload/v1640542101/Portfolio/profile-pic_dovm5o.png'
                     objectFit='cover'
                     alt='Humayon Zafar'
-                    onLoad={(e) => setImageLoad(true)}
                 />
-              </Skeleton>
               <Flex
                   alignSelf='center'
                   direction='column'

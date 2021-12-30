@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     Flex,
     Box,
@@ -17,7 +17,6 @@ import {
     InputLeftElement,
     Textarea,
     useColorModeValue,
-    useColorMode,
     FormErrorMessage,
     Link as ChakraLink,
 } from '@chakra-ui/react';
@@ -28,19 +27,12 @@ import {
     MdPerson
 } from 'react-icons/md';
 import {FaLinkedinIn, FaGithub, FaInstagram, FaStackOverflow} from 'react-icons/fa'
-import {useForm} from "react-hook-form";
 import Link from "next/link";
+import {useContactForm} from "@/hooks/useContactForm";
+import Success from "@/components/Contact/Success";
 
 export default function Contact() {
-    const {colorMode} = useColorMode();
-    const {register, handleSubmit, formState: {errors, isSubmitting}, reset} = useForm({mode: 'onChange'});
-    const onSubmit = (formData) => {
-        fetch('/api/mail', {
-            method: "POST",
-            body: JSON.stringify(formData)
-        });
-        console.log(formData, 'values');
-    }
+    const {register, handleSubmit, errors, isSubmitting, showSuccess, onSubmit} = useContactForm();
     return (
         <Box
             minH='100vh'
@@ -156,91 +148,100 @@ export default function Contact() {
                                 </Box>
                             </WrapItem>
                             <WrapItem>
-                                <Box bg="white" borderRadius="lg">
-                                    <Box m={8} color="#0B0E3F">
-                                        <VStack spacing={5}>
-                                            <form onSubmit={handleSubmit(onSubmit)}>
-                                                <FormControl id="name" isInvalid={errors.name}>
-                                                    <FormLabel>Your Name</FormLabel>
-                                                    <InputGroup borderColor="#E0E1E7">
-                                                        <InputLeftElement
-                                                            pointerEvents="none"
-                                                        >
-                                                            <MdPerson color="gray.800"/>
-                                                        </InputLeftElement>
-                                                        <Input type="text" size="md"
-                                                               name="name"
-                                                               placeholder="Humayon Zafar"
-                                                               {...register('name', {required: "Name is required"})}
+                                    <Box bg={showSuccess ? "var(--chakra-colors-gray-900)": "white"} borderRadius="lg">
+                                        <Box m={8} color="#0B0E3F">
+                                            <VStack spacing={5}>
+                                                {!showSuccess ?
+                                                <form onSubmit={handleSubmit(onSubmit)}>
+                                                    <FormControl id="name" isInvalid={errors.name}>
+                                                        <FormLabel>Your Name</FormLabel>
+                                                        <InputGroup borderColor="#E0E1E7">
+                                                            <InputLeftElement
+                                                                pointerEvents="none"
+                                                            >
+                                                                <MdPerson color="gray.800"/>
+                                                            </InputLeftElement>
+                                                            <Input type="text" size="md"
+                                                                   name="name"
+                                                                   placeholder="Humayon Zafar"
+                                                                   {...register('name', {required: "Name is required"})}
+                                                            />
+                                                        </InputGroup>
+                                                        <FormErrorMessage>
+                                                            {errors.name && errors.name.message}
+                                                        </FormErrorMessage>
+                                                    </FormControl>
+                                                    <FormControl id="email" isInvalid={errors.email}>
+                                                        <FormLabel>Mail</FormLabel>
+                                                        <InputGroup borderColor="#E0E1E7">
+                                                            <InputLeftElement
+                                                                pointerEvents="none"
+                                                            >
+                                                                <MdEmail color="gray.800"/>
+                                                            </InputLeftElement>
+                                                            <Input type="email" size="md" name="email"
+                                                                   placeholder="humayonhere@gmail.com"
+                                                                   {...register('email', {
+                                                                       required: "Email is required",
+                                                                       pattern:
+                                                                           {
+                                                                               value: /\S+@\S+\.\S+/,
+                                                                               message: 'Please enter a valid email address'
+                                                                           }
+                                                                   })}/>
+                                                        </InputGroup>
+                                                        <FormErrorMessage>
+                                                            {errors.email && errors.email.message}
+                                                        </FormErrorMessage>
+                                                    </FormControl>
+                                                    <FormControl id="contact_message"
+                                                                 isInvalid={errors.contact_message}>
+                                                        <FormLabel>Message</FormLabel>
+                                                        <Textarea
+                                                            name="contact_message"
+                                                            borderColor="gray.300"
+                                                            _hover={{
+                                                                borderRadius: 'gray.300',
+                                                            }}
+                                                            placeholder="message"
+                                                            {...register('contact_message', {
+                                                                required: 'Message is required',
+                                                                minLength: {
+                                                                    value: 15,
+                                                                    message: 'Message should be at-least 15 characters long'
+                                                                },
+                                                                maxLength: {
+                                                                    value: 300,
+                                                                    message: 'Message should be less than 800 characters'
+                                                                },
+                                                            })}
                                                         />
-                                                    </InputGroup>
-                                                    <FormErrorMessage>
-                                                        {errors.name && errors.name.message}
-                                                    </FormErrorMessage>
-                                                </FormControl>
-                                                <FormControl id="email" isInvalid={errors.email}>
-                                                    <FormLabel>Mail</FormLabel>
-                                                    <InputGroup borderColor="#E0E1E7">
-                                                        <InputLeftElement
-                                                            pointerEvents="none"
+                                                        <FormErrorMessage>
+                                                            {errors.contact_message && errors.contact_message.message}
+                                                        </FormErrorMessage>
+                                                    </FormControl>
+                                                    <FormControl id="submit-button" textAlign={{
+                                                        base: 'center',
+                                                        md: 'right',
+                                                        lg: 'right',
+                                                        xl: 'right'
+                                                    }}>
+                                                        <Button
+                                                            bg={useColorModeValue('brand.600', 'brand.600')}
+                                                            color='white'
+                                                            mt='1rem'
+                                                            _hover={{color: 'white', bg: 'brand.800'}}
+                                                            type='submit'
+                                                            isLoading={isSubmitting}
                                                         >
-                                                        <MdEmail color="gray.800"/>
-                                                        </InputLeftElement>
-                                                        <Input type="email" size="md" name="email"
-                                                               placeholder="humayonhere@gmail.com"
-                                                               {...register('email', {
-                                                                   required: "Email is required",
-                                                                   pattern:
-                                                                       {
-                                                                           value: /\S+@\S+\.\S+/,
-                                                                           message: 'Please enter a valid email address'
-                                                                       }
-                                                               })}/>
-                                                    </InputGroup>
-                                                    <FormErrorMessage>
-                                                        {errors.email && errors.email.message}
-                                                    </FormErrorMessage>
-                                                </FormControl>
-                                                <FormControl id="contact_message" isInvalid={errors.contact_message}>
-                                                    <FormLabel>Message</FormLabel>
-                                                    <Textarea
-                                                        name="contact_message"
-                                                        borderColor="gray.300"
-                                                        _hover={{
-                                                            borderRadius: 'gray.300',
-                                                        }}
-                                                        placeholder="message"
-                                                        {...register('contact_message', {
-                                                            required: 'Message is required',
-                                                            minLength: {
-                                                                value: 15,
-                                                                message: 'Message should be at-least 15 characters long'
-                                                            },
-                                                            maxLength: {
-                                                                value: 300,
-                                                                message: 'Message should be less than 800 characters'
-                                                            },
-                                                        })}
-                                                    />
-                                                    <FormErrorMessage>
-                                                        {errors.contact_message && errors.contact_message.message}
-                                                    </FormErrorMessage>
-                                                </FormControl>
-                                                <FormControl id="submit-button" textAlign={{base: 'center', md: 'right', lg: 'right', xl: 'right'}}>
-                                                    <Button
-                                                        colorScheme='brand'
-                                                        mt='1rem'
-                                                        _hover={{color: 'white', bg:'brand.600'}}
-                                                        type='submit'
-                                                        isLoading={isSubmitting}
-                                                    >
-                                                        Send Message
-                                                    </Button>
-                                                </FormControl>
-                                            </form>
-                                        </VStack>
+                                                            Send Message
+                                                        </Button>
+                                                    </FormControl>
+                                                </form>
+                                                    : <Success/>}
+                                            </VStack>
+                                        </Box>
                                     </Box>
-                                </Box>
                             </WrapItem>
                         </Wrap>
                     </Box>

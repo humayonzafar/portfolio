@@ -53,6 +53,9 @@ const theme = extendTheme({
                     color: props.colorMode === `dark` ? `black` : `white`,
                     bg: props.colorMode === `dark` ? `brand.300` : `brand.600`,
                 },
+                _placeholder: {
+                    color: `gray.400`,
+                },
             },
         }),
     },
