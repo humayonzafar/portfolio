@@ -9,14 +9,20 @@ import {
     Link as ChakraLink,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {NextSeo} from 'next-seo';
 import AboutTerminal from "../src/components/AboutTerminal";
 import {InView} from "react-intersection-observer";
 
 export default function Home() {
-    const [imageLoad, setImageLoad] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
     const [showTerminal, setShowTerminal] = useState(false);
+    const imageRef = useRef(null);
+    useEffect(() => {
+        if (!imageLoaded && imageRef.current?.complete) {
+            setImageLoaded(true);
+        }
+    }, []);
     return (
         <>
             <NextSeo title='Home'/>
@@ -41,15 +47,16 @@ export default function Home() {
                         mx='auto'
                         my={{xl: '16'}}
                     >
-                        <Skeleton isLoaded={imageLoad} boxSize='250px' borderRadius='2xl' m='auto'>
+                        <Skeleton isLoaded={imageLoaded} boxSize='250px' borderRadius='2xl' m='auto'>
                             <Image
+                                ref={imageRef}
                                 flexGrow={3}
                                 borderRadius='2xl'
                                 boxSize='250px'
                                 src='https://res.cloudinary.com/humayoncloud/image/upload/v1640542101/Portfolio/profile-pic_dovm5o.png'
                                 objectFit='cover'
                                 alt='Humayon Zafar'
-                                onLoad={() => setImageLoad(true)}
+                                onLoad={() => setImageLoaded(true)}
                             />
                         </Skeleton>
                         <Flex
