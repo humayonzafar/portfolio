@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {
     Flex,
     Box,
@@ -16,7 +16,6 @@ import {
     InputGroup,
     InputLeftElement,
     Textarea,
-    useColorModeValue,
     FormErrorMessage,
     Link as ChakraLink,
 } from '@chakra-ui/react';

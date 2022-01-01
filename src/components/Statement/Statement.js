@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, chakra, useColorModeValue, VStack, Text } from '@chakra-ui/react';
+import { Flex, chakra, useColorModeValue, VStack, Text, useBreakpoint} from '@chakra-ui/react';
 import { useHotkeys } from 'react-hotkeys-hook';
 import Head from 'next/head';
 
@@ -12,15 +12,24 @@ const Statement = ({
                    })=> {
     const [displayedIndex, setDisplayedIndex] = React.useState(0);
     const [showResult, setShowResult] = React.useState(false);
-    useHotkeys('enter', () => {
-        if (thisIndex === visibleIndex) {
-            setDisplayedIndex(input.length);
-            setShowResult(true);
-            setTimeout(() => {
-                setVisibleIndex(x => x + 1);
-            }, 400);
-        }
-    });
+    const [enterPress, setEnterPress] = React.useState(false);
+    const bp = useBreakpoint();
+    let message = 'Press press enter to learn more...';
+    if(thisIndex===0 && ['base', 'sm'].includes(bp)){
+        message = 'Executing....';
+        setTimeout(onEnterKeyPressed, 5000);
+    }
+    useHotkeys('enter', onEnterKeyPressed);
+    function onEnterKeyPressed(){
+            if (thisIndex === visibleIndex && !enterPress) {
+                setEnterPress(()=>true);
+                setDisplayedIndex(input.length);
+                setShowResult(true);
+                setTimeout(() => {
+                    setVisibleIndex(x => x + 1);
+                }, 400);
+            }
+    }
     const visible = thisIndex <= visibleIndex;
     React.useEffect(() => {
         if (!visible) {
@@ -86,7 +95,7 @@ const Statement = ({
                     visibility={showResult || initialState ? 'visible' : 'hidden'}
                     alignSelf='flex-start'
                     dangerouslySetInnerHTML={{
-                        __html: initialState ? 'Press press enter to learn more...' : result,
+                        __html: initialState ? message : result,
                     }}
                 />
             </VStack>

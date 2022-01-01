@@ -9,9 +9,6 @@ export default function Success() {
             <Heading as="h2" size="xl" mt={6} mb={2}>
                 Thank you for getting in touch!
             </Heading>
-            <Text color={'white.500'}>
-               Will get back in touch with you soon! Have a great day!
-            </Text>
         </Box>
     );
 }
