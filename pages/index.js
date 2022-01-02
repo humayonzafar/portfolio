@@ -108,7 +108,7 @@ export default function Home() {
                             </chakra.p>
                         </Flex>
                     </Flex>
-                    <InView threshold='1' triggerOnce='true' as="div" onChange={setShowTerminal}>
+                    <InView threshold='0.3' triggerOnce='true' as="div" onChange={setShowTerminal}>
                         {showTerminal && <AboutTerminal/>}
                     </InView>
                 </Flex>

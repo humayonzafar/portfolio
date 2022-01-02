@@ -6,6 +6,7 @@ import Loader from '../src/components/Loader';
 import {DefaultSeo} from 'next-seo'
 import AppLayout from '../src/components/AppLayout'
 import theme from '../src/theme'
+import {Head} from "next/document";
 
 export default function MyApp({Component, pageProps}) {
     const [loading, setLoading] = useState(false)
@@ -29,6 +30,9 @@ export default function MyApp({Component, pageProps}) {
 
     return (
         <>
+            <head>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </head>
             <DefaultSeo
                 defaultTitle='Humayon Zafar'
                 titleTemplate='%s | Humayon Zafar'

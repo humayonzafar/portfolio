@@ -12,7 +12,6 @@ const info = (props) => [
         input: 'currentLocation',
         result: '"Lahore, Pakistan"',
     },
-
     {
         input: 'interests',
         result: '["Web Development", "Travelling", "Gaming", "Photography"]',
