@@ -18,13 +18,16 @@ import {useEffect} from 'react';
 
 const links = [
     {
-        name: `Contact`,
-        link: `/contact`,
+        name: `Home`,
+        link: `/`,
     },
     {
         name: `Resume`,
-        link: `https://drive.google.com/file/d/15ovXVBOQ0sD1jXHRkY8mPv99o4wgWY7J/view`,
-        isExternal: true
+        link: `/resume`,
+    },
+    {
+        name: `Contact`,
+        link: `/contact`,
     },
 ];
 

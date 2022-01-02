@@ -1,26 +1,18 @@
 import {
     Box,
     Flex,
-    Text,
-    Heading,
-    List,
-    HStack,
-    ListItem,
-    VStack,
-
     Image,
-    chakra,
-    useColorModeValue,
-    Skeleton,
-    Link as ChakraLink,
-    useBreakpoint,
+    Button,
+    SimpleGrid,
+    Tooltip
 } from '@chakra-ui/react';
-import Link from 'next/link';
-import React, {useState} from 'react';
+import React from 'react';
 import {NextSeo} from 'next-seo';
 import LineHeading from "@/components/LineHeading";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import {FaFileDownload} from 'react-icons/fa';
+import Skills from "@/components/Skills";
 
 export default function Resume() {
     return (
@@ -35,11 +27,14 @@ export default function Resume() {
                 pt={{base: '28', sm: '14', md: '16', xl: '20'}}
             >
                 <Flex
-                    direction='row'
+                    direction={{base: 'column', md: 'row', sm: 'column', lg: 'row'}}
                     justifyContent={{base: 'center', md: 'space-between'}}
                     height='full'
                     width='full'
-                    p={{base: 0, sm: 16}}
+                    pt={{base: 0, sm: 8}}
+                    pb={{base: 0, sm: 8}}
+                    pl={{base: 0, sm: 6}}
+                    pr={{base: 0, sm: 6}}
                 >
                     <Box>
                         <LineHeading fontSize={{base: `1xl`, md: `2xl`}} mx='auto' textAlign='left'>
@@ -51,9 +46,26 @@ export default function Resume() {
                         <LineHeading fontSize={{base: `1xl`, md: `2xl`}} mx='auto' textAlign='left'>
                             Education
                         </LineHeading>
-                        <Education />
+                        <Education/>
                     </Box>
                 </Flex>
+                <Skills/>
+                <Box textAlign='center' width='full' mt='2rem' mx='auto'>
+                    <Button
+                        as='a'
+                        bg='brand.600'
+                        target='blank'
+                        color='white'
+                        mt='1rem'
+                        mb='1rem'
+                        size='lg'
+                        rightIcon={<FaFileDownload/>}
+                        _hover={{color: 'white', bg: 'brand.800'}}
+                        href='https://drive.google.com/file/d/15ovXVBOQ0sD1jXHRkY8mPv99o4wgWY7J/view'
+                    >
+                        Download Resume
+                    </Button>
+                </Box>
             </Box>
         </>
     );

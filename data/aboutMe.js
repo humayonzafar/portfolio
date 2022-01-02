@@ -1,3 +1,5 @@
+import {social} from "@/data/social";
+
 const style = (props) =>
     `color: var(--chakra-colors-brand-${
         props.colorMode === 'light' ? '600' : '300'
@@ -28,13 +30,19 @@ const info = (props) => [
     },
     {
         input: 'contactMe',
-        result: `["<a style="${style(
+        result: `[
+          "<a style="${style(
             props
-        )}" rel="noopener" href="https://www.linkedin.com/in/humayonzafar/">LinkedIn</a>", "<a style="${style(
+        )}" rel="noopener" href="https://github.com/humayonzafar" target="_blank">Github</a>",
+          "<a style="${style(
             props
-        )}" rel="noopener" href="https://github.com/humayonzafar">Github</a>", "<a rel="noopener" style="${style(
+        )}" rel="noopener" href="https://stackoverflow.com/users/17404705/humayon-zafar" target="_blank">Stackoverflow</a>"
+          "<a style="${style(
             props
-        )}" href="https://www.instagram.com/humayon.zafar/">Instagram</a>"]`,
+        )}" rel="noopener" href="https://www.linkedin.com/in/humayonzafar/" target="_blank">LinkedIn</a>", 
+          "<a rel="noopener" style="${style(
+            props
+        )}" href="https://www.instagram.com/humayon.zafar/" target="_blank">Instagram</a>"]`,
     },
 ];
 

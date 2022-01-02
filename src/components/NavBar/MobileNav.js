@@ -48,12 +48,6 @@ function MobileNav({links}) {
                 rounded='sm'
                 shadow='sm'
             >
-                <Link href='/' passHref>
-                    <Button as={ChakraLink} w='full' mt={16} variant='ghost'>
-                        Home
-                    </Button>
-                </Link>
-
                 {links.map((link, index) => {
                     if (link.type === `dropdown`) {
                         return link.links.map((item, i) => (
@@ -65,8 +59,8 @@ function MobileNav({links}) {
                         ))
                     }
                     return (
-                        <Link href={link.link} key={`${index.toString()}link`} passHref>
-                            <Button key={index.toString()} as={ChakraLink} w='full' mx={2} variant='ghost'>
+                        <Link href={link.link} key={`${index.toString()}link`} passHref >
+                            <Button key={index.toString()} as={ChakraLink} w='full' mt={index===0?16:0} mx={2} variant='ghost'>
                                 {link.name}
                             </Button>
                         </Link>
@@ -77,4 +71,4 @@ function MobileNav({links}) {
     )
 }
 
-export default MobileNav
+export default MobileNav;

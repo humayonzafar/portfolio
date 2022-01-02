@@ -6,7 +6,7 @@ const Education = () => {
     return (
         <List paddingBottom={4}>
             {
-                (educationData ?? []).map(({university, degree, duration, grade}, index) => {
+                (educationData ?? []).map(({university, degree, duration, grade, location}, index) => {
                     const isLastElement = index === educationData.length - 1;
                     const isFirstElement = index === 0;
                     return (
@@ -36,7 +36,7 @@ const Education = () => {
                                     height='14px'
                                     marginTop={1}
                                     borderRadius='full'
-                                    bgGradient='linear(to-r, green.400, green.500, blue.100)'
+                                    bgGradient='linear(to-r, brand.600, brand.800)'
                                 />
                                 <VStack
                                     width='full'
@@ -55,10 +55,20 @@ const Education = () => {
                                          variant='regular'
                                          textAlign='left'
                                     >
+                                        <Text as='i' fontSize='14px' width='full' variant='regular' textAlign='left'>{location}</Text>
                                         <Text size='xs' width='full' variant='regular' textAlign='left'>{degree}</Text>
                                     </Box>
                                 </VStack>
                             </HStack>
+                            <Flex
+                                left='5px'
+                                top={5}
+                                width='2.5px'
+                                height='70px'
+                                zIndex={-1}
+                                position='absolute'
+                                backgroundColor='gray.100'
+                            />
                         </ListItem>
                     )
                 })

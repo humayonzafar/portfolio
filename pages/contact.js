@@ -30,6 +30,7 @@ import Link from "next/link";
 import {useContactForm} from "@/hooks/useContactForm";
 import Success from "@/components/Contact/Success";
 import {NextSeo} from "next-seo";
+import {social} from "@/data/social";
 
 export default function Contact() {
     const {register, handleSubmit, errors, isSubmitting, showSuccess, onSubmit} = useContactForm();
@@ -115,6 +116,9 @@ export default function Contact() {
                                             px={5}
                                             alignItems="flex-start">
                                             <IconButton
+                                                as={'a'}
+                                                href={social.github}
+                                                target={'_blank'}
                                                 aria-label="github"
                                                 variant="ghost"
                                                 size="lg"
@@ -123,15 +127,10 @@ export default function Contact() {
                                                 icon={<FaGithub size="24px"/>}
                                             />
                                             <IconButton
-                                                aria-label="linkedin"
-                                                variant="ghost"
-                                                size="lg"
-                                                isRound={true}
-                                                _hover={{bg: 'brand.600'}}
-                                                icon={<FaLinkedinIn size="24px"/>}
-                                            />
-                                            <IconButton
                                                 aria-label="stackoverflow"
+                                                as={'a'}
+                                                href={social.stackoverflow}
+                                                target={'_blank'}
                                                 variant="ghost"
                                                 size="lg"
                                                 isRound={true}
@@ -139,7 +138,21 @@ export default function Contact() {
                                                 icon={<FaStackOverflow size="24px"/>}
                                             />
                                             <IconButton
+                                                aria-label="linkedin"
+                                                as={'a'}
+                                                href={social.linkedin}
+                                                target={'_blank'}
+                                                variant="ghost"
+                                                size="lg"
+                                                isRound={true}
+                                                _hover={{bg: 'brand.600'}}
+                                                icon={<FaLinkedinIn size="24px"/>}
+                                            />
+                                            <IconButton
                                                 aria-label="instagram"
+                                                as={'a'}
+                                                href={social.instagram}
+                                                target={'_blank'}
                                                 variant="ghost"
                                                 size="lg"
                                                 isRound={true}

@@ -8,9 +8,9 @@ export default async function handler(req, res) {
              Email: ${body.email}\r\n
              Message: ${body.contact_message}\r\n`;
         const data = {
-            to: 'humayonhere@gmail.com',
-            from: 'contact@humayonzafar.com',
-            subject: 'New Contact Form Message',
+            to: process.env.PRIMARY_EMAIL,
+            from: process.env.SUPPORT_EMAIL,
+            subject: 'Contact Form Message',
             text: message,
             html: message.replace(/\r\n/g, '<br>')
         };

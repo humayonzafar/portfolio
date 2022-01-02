@@ -11,12 +11,12 @@ import {
     SimpleGrid,
     useColorMode,
 } from '@chakra-ui/react'
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
-import { BsPauseFill } from 'react-icons/bs'
-import SocialIcons from './SocialIcons'
+import {FaGithub, FaInstagram, FaLinkedin, FaStackOverflow} from 'react-icons/fa';
+import SocialIcons from './SocialIcons';
+import {social} from "@/data/social";
 
-const Footer = ()=> {
-    const { colorMode } = useColorMode()
+const Footer = () => {
+    const {colorMode} = useColorMode()
 
     return (
         <Box
@@ -24,8 +24,8 @@ const Footer = ()=> {
             color={useColorModeValue(`gray.700`, `gray.200`)}
         >
             <SimpleGrid
-                columns={{ base: 1, md: 3 }}
-                gridTemplate={{ base: `1fr`, md: `1fr 1fr 1fr` }}
+                columns={{base: 1, md: 3}}
+                gridTemplate={{base: `1fr`, md: `1fr 1fr 1fr`}}
                 mx='auto'
                 maxW='7xl'
                 py={4}
@@ -33,15 +33,15 @@ const Footer = ()=> {
                 spacing={4}
                 align='center'
             >
-                <Flex direction='row' maxW='full' mx={{ base: `auto`, md: 5 }} alignItems='center'>
+                <Flex direction='row' maxW='full' mx={{base: `auto`, md: 5}} alignItems='center'>
 
                     <Flex ml={2} isTruncated>
                         <chakra.span
                             mx={2}
                             color={useColorModeValue(`gray.600`, `gray.300`)}
-                            display={{ base: `hidden`, sm: `block` }}
+                            display={{base: `hidden`, sm: `block`}}
                         >
-                        {/*  Insert emoji  */}
+                            {/*  Insert emoji  */}
                         </chakra.span>
                         <chakra.p color='gray.600' isTruncated maxW='full'>
                         </chakra.p>
@@ -75,7 +75,7 @@ const Footer = ()=> {
                                 mx={1}
                                 alignSelf='center'
                             >
-                                <rect width='256' height='256' rx='128.5' fill='currentColor' />
+                                <rect width='256' height='256' rx='128.5' fill='currentColor'/>
                                 <path
                                     d='M69.558 133.985l87.592-86.9891c1.636-1.6251 4.27.3525 3.165 2.377l-32.601 59.7521c-.728 1.332.237 2.958 1.755 2.958h56.34c1.815 0 2.691 2.223 1.364 3.462l-98.7278 92.142c-1.7702 1.652-4.4051-.676-2.9839-2.636l46.7357-64.473c.958-1.322.014-3.174-1.619-3.174H70.9673c-1.7851 0-2.6759-2.161-1.4093-3.419z'
                                     fill={useColorModeValue(`white`, `gray.800`)}
@@ -84,15 +84,18 @@ const Footer = ()=> {
                         </ChakraLink>
                     </Tooltip>
                 </Text>
-                <Stack direction='row' spacing={6} ml='auto' mr={{ base: `auto`, md: 5 }}>
-                    <SocialIcons label='GitHub' href='https://github.com/humayonzafar'>
-                        <FaGithub />
+                <Stack direction='row' spacing={6} ml='auto' mr={{base: `auto`, md: 5}}>
+                    <SocialIcons label='GitHub' href={social.github}>
+                        <FaGithub/>
                     </SocialIcons>
-                    <SocialIcons label='LinkedIn' href='https://www.linkedin.com/in/humayonzafar/'>
-                        <FaLinkedin />
+                    <SocialIcons label='Stackoverflow' href={social.stackoverflow}>
+                        <FaStackOverflow/>
                     </SocialIcons>
-                    <SocialIcons label='Instagram' href='https://www.instagram.com/humayon.zafar/'>
-                        <FaInstagram />
+                    <SocialIcons label='LinkedIn' href={social.linkedin}>
+                        <FaLinkedin/>
+                    </SocialIcons>
+                    <SocialIcons label='Instagram' href={social.instagram}>
+                        <FaInstagram/>
                     </SocialIcons>
                 </Stack>
             </SimpleGrid>
