@@ -21,6 +21,7 @@ const AboutTerminal = () => {
     const [visibleIndex, setVisibleIndex] = React.useState(0);
     const [finished, setFinished] = React.useState(false);
     const { colorMode } = useColorMode();
+    const [enterPress, setEnterPress] = React.useState(false);
     useEffect(() => {
         if (visibleIndex === content({ colorMode }).length) {
             setFinished(true);
@@ -79,6 +80,8 @@ const AboutTerminal = () => {
                                 setVisibleIndex={setVisibleIndex}
                                 visibleIndex={visibleIndex}
                                 key={i.toString()}
+                                setEnterPress={setEnterPress}
+                                enterPress={enterPress}
                                 {...statement}
                             />
                         );

@@ -8,27 +8,28 @@ const Statement = ({
                        result,
                        visibleIndex,
                        thisIndex,
-                       setVisibleIndex
+                       setVisibleIndex,
+                       enterPress,
+                       setEnterPress
                    })=> {
     const [displayedIndex, setDisplayedIndex] = React.useState(0);
     const [showResult, setShowResult] = React.useState(false);
-    const [enterPress, setEnterPress] = React.useState(false);
     const bp = useBreakpoint();
     let message = 'Press press enter to learn more...';
-    if(thisIndex===0 && ['base', 'sm'].includes(bp)){
-        message = 'Executing....';
-        setTimeout(onEnterKeyPressed, 5000);
-    }
     useHotkeys('enter', onEnterKeyPressed);
     function onEnterKeyPressed(){
             if (thisIndex === visibleIndex && !enterPress) {
-                setEnterPress(()=>true);
                 setDisplayedIndex(input.length);
                 setShowResult(true);
                 setTimeout(() => {
                     setVisibleIndex(x => x + 1);
                 }, 400);
             }
+    }
+    if(thisIndex===0 && ['base', 'sm'].includes(bp)){
+        message = 'Executing....';
+        setTimeout(onEnterKeyPressed, 5000);
+        setEnterPress(()=>true);
     }
     const visible = thisIndex <= visibleIndex;
     React.useEffect(() => {
@@ -55,7 +56,7 @@ const Statement = ({
                     setDisplayedIndex(i => i + 1);
                 }, 3000);
             }
-            else if(displayedIndex <= 50){
+            else if(displayedIndex <= 20){
                 setTimeout(() => {
                     setDisplayedIndex(displayedIndex + 1);
                 }, 25 + Math.random() * 75);

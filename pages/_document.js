@@ -9,9 +9,6 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <meta name="msapplication-TileColor" content="#ffffff"/>
-                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
-                    <meta name="theme-color" content="#ffffff"/>
                     <link rel="shortcut icon" href="/favicon.ico"/>
                     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>
                     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"/>

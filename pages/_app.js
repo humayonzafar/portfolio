@@ -6,6 +6,7 @@ import Loader from '../src/components/Loader';
 import {DefaultSeo} from 'next-seo'
 import AppLayout from '../src/components/AppLayout'
 import theme from '../src/theme'
+import Head from 'next/head'
 
 export default function MyApp({Component, pageProps}) {
     const [loading, setLoading] = useState(false)
@@ -29,9 +30,12 @@ export default function MyApp({Component, pageProps}) {
 
     return (
         <>
-            <head>
+            <Head>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            </head>
+                <meta name="msapplication-TileColor" content="#ffffff"/>
+                <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
+                <meta name="theme-color" content="#ffffff"/>
+            </Head>
             <DefaultSeo
                 defaultTitle='Humayon Zafar'
                 titleTemplate='%s | Humayon Zafar'
@@ -46,7 +50,7 @@ export default function MyApp({Component, pageProps}) {
                         },
                     ],
                 }}
-                description="Hi, I'm Humayon!. I am a FullStack developer having 3+ years of experience in developing state-of-the-art applications, building great user experiences by bringing simplicity to life and constantly learning."
+                description="Hi, I'm Humayon Zafar!.  I'm a computer scientist who is passionate about developing state-of-the-art applications, building great user experiences by bringing simplicity to life and constantly learning"
             />
             <ChakraProvider theme={theme}>
                 {loading ? (
