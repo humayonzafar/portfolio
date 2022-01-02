@@ -6,7 +6,6 @@ import Loader from '../src/components/Loader';
 import {DefaultSeo} from 'next-seo'
 import AppLayout from '../src/components/AppLayout'
 import theme from '../src/theme'
-import {Head} from "next/document";
 
 export default function MyApp({Component, pageProps}) {
     const [loading, setLoading] = useState(false)
