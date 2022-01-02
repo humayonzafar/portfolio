@@ -1,5 +1,3 @@
-import {social} from "@/data/social";
-
 const style = (props) =>
     `color: var(--chakra-colors-brand-${
         props.colorMode === 'light' ? '600' : '300'
@@ -25,8 +23,7 @@ const info = (props) => [
     },
     {
         input: 'skills',
-        result:
-            '[ "Laravel", "Node", "React", "Vue", "Wordpress"]',
+        result: '[ "Html5", "Css3", "Php", "Javascript", Laravel", "Node", "Express", "React", "Vue", "Wordpress"]',
     },
     {
         input: 'contactMe',
