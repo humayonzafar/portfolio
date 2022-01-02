@@ -9,14 +9,10 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
-                        rel="stylesheet"
-                    />
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-                        rel="stylesheet"
-                    />
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    <meta name="msapplication-TileColor" content="#ffffff"/>
+                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
+                    <meta name="theme-color" content="#ffffff"/>
                     <link rel="shortcut icon" href="/favicon.ico"/>
                     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>
                     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"/>
@@ -32,9 +28,8 @@ export default class MyDocument extends Document {
                     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"/>
                     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
                     <link rel="manifest" href="/manifest.json"/>
-                    <meta name="msapplication-TileColor" content="#ffffff"/>
-                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
-                    <meta name="theme-color" content="#ffffff"/>
+                    <link href="https://fonts.googleapis.com/css2?family=Inter&display=optional" rel="stylesheet"/>
+                    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"/>
                 </Head>
                 <body id={'de_body'}>
                 <ColorModeScript initialColorMode={theme.config.initialColorMode} />

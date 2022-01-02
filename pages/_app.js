@@ -38,12 +38,12 @@ export default function MyApp({Component, pageProps}) {
                     site_name: `Humayon Zafar`,
                     images: [
                         {
-                            url: `/static/images/profile.jpeg`,
+                            url: `/static/images/profile.png`,
                             alt: `Profile Picture`,
                         },
                     ],
                 }}
-                description='The purpose of this site is for me to test things out & maybe show some things off.'
+                description="Hi, I'm Humayon!. I am a FullStack developer having 3+ years of experience in developing state-of-the-art applications, building great user experiences by bringing simplicity to life and constantly learning."
             />
             <ChakraProvider theme={theme}>
                 {loading ? (
