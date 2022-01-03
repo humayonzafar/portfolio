@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     Flex,
     useColorModeValue,
@@ -11,6 +11,8 @@ import {
 import content from '/data/aboutMe';
 import styled from '@emotion/styled';
 import Statement from '../Statement';
+import {InView} from "react-intersection-observer";
+
 const StatusButton = styled(chakra.span)`
   height: 12px;
   width: 12px;
@@ -20,10 +22,11 @@ const StatusButton = styled(chakra.span)`
 const AboutTerminal = () => {
     const [visibleIndex, setVisibleIndex] = React.useState(0);
     const [finished, setFinished] = React.useState(false);
-    const { colorMode } = useColorMode();
+    const {colorMode} = useColorMode();
     const [enterPress, setEnterPress] = React.useState(false);
+    const [showTerminal, setShowTerminal] = useState(false);
     useEffect(() => {
-        if (visibleIndex === content({ colorMode }).length) {
+        if (visibleIndex === content({colorMode}).length) {
             setFinished(true);
         }
     }, [visibleIndex, colorMode]);
@@ -39,9 +42,9 @@ const AboutTerminal = () => {
                 bg={`${useColorModeValue('rgba(0, 0, 0, 0.15)', 'rgba(0, 0, 0, 0.4)')}`}
             >
                 <Stack isInline ml={5}>
-                    <StatusButton bg={useColorModeValue('red.400', 'red.400')} />
-                    <StatusButton bg={useColorModeValue('orange.400', 'orange.400')} />
-                    <StatusButton bg={useColorModeValue('brand.600', 'brand.500')} />
+                    <StatusButton bg={useColorModeValue('red.400', 'red.400')}/>
+                    <StatusButton bg={useColorModeValue('orange.400', 'orange.400')}/>
+                    <StatusButton bg={useColorModeValue('brand.600', 'brand.500')}/>
                 </Stack>
                 <Flex
                     mx={'auto'}
@@ -73,19 +76,21 @@ const AboutTerminal = () => {
                     zIndex='-5'
                 ></Flex>
                 <VStack width='full' spacing={3} alignItems='flex-start' p={5} direction='column'>
-                    {content({ colorMode }).map((statement, i) => {
-                        return (
-                            <Statement
-                                thisIndex={i}
-                                setVisibleIndex={setVisibleIndex}
-                                visibleIndex={visibleIndex}
-                                key={i.toString()}
-                                setEnterPress={setEnterPress}
-                                enterPress={enterPress}
-                                {...statement}
-                            />
-                        );
-                    })}
+                    <InView threshold='0.5' triggerOnce='true' as="div" onChange={setShowTerminal}>
+                        {showTerminal && content({colorMode}).map((statement, i) => {
+                            return (
+                                <Statement
+                                    thisIndex={i}
+                                    setVisibleIndex={setVisibleIndex}
+                                    visibleIndex={visibleIndex}
+                                    key={i.toString()}
+                                    setEnterPress={setEnterPress}
+                                    enterPress={enterPress}
+                                    {...statement}
+                                />
+                            );
+                        })}
+                    </InView>
                 </VStack>
             </Flex>
         </Flex>

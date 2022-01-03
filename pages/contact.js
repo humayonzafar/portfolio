@@ -31,6 +31,7 @@ import {useContactForm} from "@/hooks/useContactForm";
 import Success from "@/components/Contact/Success";
 import {NextSeo} from "next-seo";
 import {social} from "@/data/social";
+import AboutTerminal from "@/components/AboutTerminal";
 
 export default function Contact() {
     const {register, handleSubmit, errors, isSubmitting, showSuccess, onSubmit} = useContactForm();
@@ -45,6 +46,7 @@ export default function Contact() {
                 mx='auto'
                 pt={{base: '28', sm: '14', md: '16', xl: '20'}}
                 display='flex' alignItems='center' justifyContent='center'
+                mb='1rem'
             >
                 <Flex align='center' justify='center'>
                     <Box

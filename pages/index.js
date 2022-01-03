@@ -12,11 +12,9 @@ import Link from 'next/link';
 import React, {useState, useRef, useEffect} from 'react';
 import {NextSeo} from 'next-seo';
 import AboutTerminal from "../src/components/AboutTerminal";
-import {InView} from "react-intersection-observer";
 
 export default function Home() {
     const [imageLoaded, setImageLoaded] = useState(false);
-    const [showTerminal, setShowTerminal] = useState(false);
     const imageRef = useRef(null);
     useEffect(() => {
         if (!imageLoaded && imageRef.current?.complete) {
@@ -33,6 +31,7 @@ export default function Home() {
                 maxW='7xl'
                 mx='auto'
                 pt={{base: '28', sm: '14', md: '16', xl: '20'}}
+                mb='1rem'
             >
                 <Flex
                     direction='column'
@@ -108,9 +107,7 @@ export default function Home() {
                             </chakra.p>
                         </Flex>
                     </Flex>
-                    <InView threshold='0.3' triggerOnce='true' as="div" onChange={setShowTerminal}>
-                        {showTerminal && <AboutTerminal/>}
-                    </InView>
+                    <AboutTerminal/>
                 </Flex>
             </Box>
         </>

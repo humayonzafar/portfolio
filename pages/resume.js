@@ -13,6 +13,7 @@ import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import {FaFileDownload} from 'react-icons/fa';
 import Skills from "@/components/Skills";
+import AboutTerminal from "@/components/AboutTerminal";
 
 export default function Resume() {
     return (
@@ -25,6 +26,7 @@ export default function Resume() {
                 maxW='7xl'
                 mx='auto'
                 pt={{base: '28', sm: '14', md: '16', xl: '20'}}
+                mb='1rem'
             >
                 <Flex
                     direction={{base: 'column', md: 'row', sm: 'column', lg: 'row'}}
@@ -57,7 +59,6 @@ export default function Resume() {
                         target='blank'
                         color='white'
                         mt='1rem'
-                        mb='1rem'
                         size='lg'
                         rightIcon={<FaFileDownload/>}
                         _hover={{color: 'white', bg: 'brand.800'}}
