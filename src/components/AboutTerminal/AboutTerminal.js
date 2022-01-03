@@ -31,7 +31,7 @@ const AboutTerminal = () => {
         }
     }, [visibleIndex, colorMode]);
     return (
-        <Flex direction='column' minH='300px' width='full' maxW='7xl' mx='auto' mt={16}>
+        <Flex direction='column' minH='300px' width='full' maxW='7xl' mx='auto'>
             <Flex
                 width='full'
                 position='relative'
