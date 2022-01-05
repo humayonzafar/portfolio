@@ -59,7 +59,7 @@ export default function MyApp({Component, pageProps}) {
                     site_name: `Humayon Zafar`,
                     images: [
                         {
-                            url: `/static/images/profile.png`,
+                            url: `https://www.humayonzafar.com/static/images/profile.png`,
                             alt: `Profile Picture`,
                         },
                     ],

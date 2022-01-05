@@ -1,10 +1,10 @@
 export const skills = [
     {
-        src: '/static/svg/html.svg',
+        src: '/static/svg/html5-trans.svg',
         tooltip: 'HTML',
     },
     {
-        src: '/static/svg/css.svg',
+        src: '/static/svg/css-3-trans.svg',
         tooltip: 'CSS',
     },
     {

@@ -6,7 +6,7 @@ import {skills} from "@/data/skills";
 
 const Skills = () => (
     <>
-        <LineHeading fontSize={{base: `2xl`, md: `3xl`}} mx='auto' textAlign='center' m='2rem'>
+        <LineHeading fontSize={{base: `2xl`, md: `3xl`}} mx='auto' textAlign='center' m='1rem'>
             Skills
         </LineHeading>
         <SimpleGrid

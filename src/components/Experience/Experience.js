@@ -4,11 +4,19 @@ import {experienceData} from "@/data/experience";
 
 const Experience = _ => {
     return (
-        <List paddingBottom='1rem'>
+        <List paddingBottom='1rem' position='relative'>
+            <Flex
+                left='5px'
+                top={0}
+                width='2.5px'
+                height={'unset'}
+                zIndex={-1}
+                position='absolute'
+                backgroundColor='gray.100'
+            />
             {
                 (experienceData ?? []).map(({company, location, designation, type, duration}, index) => {
                     const isLastElement = index === experienceData.length - 1;
-                    const isFirstElement = index === 0;
                     return (
                         <ListItem
                             key={company}
@@ -18,7 +26,7 @@ const Experience = _ => {
                         >
                             <Flex
                                 left='5px'
-                                top={isFirstElement ? 5 : 0}
+                                top={0}
                                 width='2.5px'
                                 bottom={0}
                                 height={isLastElement ? 5 : 'unset'}

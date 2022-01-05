@@ -4,11 +4,19 @@ import {educationData} from "@/data/education";
 
 const Education = () => {
     return (
-        <List paddingBottom={4}>
+        <List paddingBottom={4} position='relative'>
+            <Flex
+                left='5px'
+                top={0}
+                width='2.5px'
+                height={'unset'}
+                zIndex={-1}
+                position='absolute'
+                backgroundColor='gray.100'
+            />
             {
                 (educationData ?? []).map(({university, degree, duration, grade, location}, index) => {
                     const isLastElement = index === educationData.length - 1;
-                    const isFirstElement = index === 0;
                     return (
                         <ListItem
                             key={university}
@@ -18,7 +26,7 @@ const Education = () => {
                         >
                             <Flex
                                 left='5px'
-                                top={isFirstElement ? 5 : 0}
+                                top={0}
                                 width='2.5px'
                                 bottom={0}
                                 height={isLastElement ? 5 : 'unset'}
