@@ -82,8 +82,8 @@ export default function Home() {
                             </Heading>
                             <chakra.p maxW='650px' textAlign={{base: `center`, lg: `left`}} fontSize='xl' mt={2}>
                                 I am a {' '}
-                                <Box as='span' bgGradient={`linear(to-r, ${useColorModeValue(`brand.600`, `brand.400`)}, ${useColorModeValue(`teal.600`, `teal.400`)}, ${useColorModeValue(`blue.600`, `blue.300`)})`} className='moving-grad' bgClip='text'>FullStack</Box>
-                                {' '} developer having 3+ years of experience in developing state-of-the-art applications,
+                                <Box as='span' bgGradient={`linear(to-r, ${useColorModeValue(`brand.600`, `brand.400`)}, ${useColorModeValue(`teal.600`, `teal.400`)}, ${useColorModeValue(`blue.600`, `blue.300`)})`} className='moving-grad' bgClip='text'>FullStack Developer</Box>
+                                {' '} having 3+ years of experience in developing state-of-the-art applications,
                                 building great user experiences by bringing simplicity to life and constantly learning.
                             </chakra.p>
                             <chakra.p maxW='650px' textAlign={{base: `center`, lg: `left`}} fontSize='xl' mt={2}>
