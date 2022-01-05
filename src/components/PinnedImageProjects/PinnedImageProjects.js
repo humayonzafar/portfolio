@@ -66,8 +66,8 @@ const PinnedImageProjects = ({
                             <Flex justifyContent='space-between'>
                                 <Heading isTruncated>{projectData.name}</Heading>
                                 <Stack isInline justifyContent='flex-end' alignItems='center' spacing={4} mr={1}>
-                                    {repo?.html_url && (
-                                        <Link href={repo?.html_url} passHref>
+                                    {projectData?.html_url && (
+                                        <Link href={projectData?.html_url} passHref>
                                             <ChakraLink isExternal className={`hover-link-${colorMode}`}>
                                                 <FaGithub size={23} />
                                             </ChakraLink>

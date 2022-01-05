@@ -44,6 +44,7 @@ const PinnedProjects = ({ repo, projectData, left }) => {
                             {projectData.name}
                         </Text>
                         <Stack isInline justifyContent='flex-end' alignItems='center' spacing={4} mr={1}>
+                            <p>testing</p>
                             {repo?.html_url && (
                                 <Link href={repo?.html_url} passHref>
                                     <ChakraLink isExternal className={`hover-link-${colorMode}`}>

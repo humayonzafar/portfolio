@@ -1,10 +1,7 @@
 import {
     Box,
     Flex,
-    Image,
     Button,
-    SimpleGrid,
-    Tooltip
 } from '@chakra-ui/react';
 import React from 'react';
 import {NextSeo} from 'next-seo';
@@ -13,7 +10,6 @@ import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import {FaFileDownload} from 'react-icons/fa';
 import Skills from "@/components/Skills";
-import AboutTerminal from "@/components/AboutTerminal";
 
 export default function Resume() {
     return (

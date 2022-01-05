@@ -6,6 +6,7 @@ const RepoCard = ({ repo, i }) => {
         <Box
             key={i.toString()}
             as='a'
+            target={'_blank'}
             href={repo.html_url}
             h='full'
             w='full'
