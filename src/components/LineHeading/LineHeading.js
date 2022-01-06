@@ -13,6 +13,7 @@ const LineHeading = ({ children, ...props }) => (
             bgColor: useColorModeValue(`brand.200`, `brand.500`),
             opacity: useColorModeValue(1, 0.5),
             zIndex: -1,
+            position:'absolute'
         }}
         {...props}
     >

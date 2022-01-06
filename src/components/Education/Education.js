@@ -5,15 +5,6 @@ import {educationData} from "@/data/education";
 const Education = () => {
     return (
         <List paddingBottom={4} position='relative'>
-            <Flex
-                left='5px'
-                top={0}
-                width='2.5px'
-                height={'unset'}
-                zIndex={-1}
-                position='absolute'
-                backgroundColor='gray.100'
-            />
             {
                 (educationData ?? []).map(({university, degree, duration, grade, location}, index) => {
                     const isLastElement = index === educationData.length - 1;
