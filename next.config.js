@@ -1,3 +1,5 @@
+const withPWA = require('next-pwa');
+
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' unpkg.com 'unsafe-eval' 'unsafe-inline' *.humayonzafar.com;
@@ -65,5 +67,13 @@ module.exports = withMDX({
                 headers: securityHeaders,
             },
         ];
+    }
+});
+
+module.exports = withPWA({
+    pwa: {
+        dest: 'public',
+        disable: process.env.NODE_ENV === 'development',
     },
+    reactStrictMode: true,
 });

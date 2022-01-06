@@ -45,10 +45,12 @@ export default function MyApp({Component, pageProps}) {
             </Script>
             <Head>
                 <meta charSet="utf-8"/>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
                 <meta name="msapplication-TileColor" content="#ffffff"/>
                 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
-                <meta name="theme-color" content="#ffffff"/>
+                <meta name="theme-color" content="#2bae66"/>
+                <meta name='application-name' content='Humayon Zafar Portfolio App' />
             </Head>
             <DefaultSeo
                 defaultTitle='Humayon Zafar'
