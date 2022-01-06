@@ -28,7 +28,7 @@ const Statement = ({
     }
     if(thisIndex===0 && ['base', 'sm'].includes(bp)){
         message = 'Executing....';
-        setTimeout(onEnterKeyPressed, 5000);
+        setTimeout(onEnterKeyPressed, 3000);
         setEnterPress(()=>true);
     }
     const visible = thisIndex <= visibleIndex;
@@ -54,7 +54,7 @@ const Statement = ({
             if( displayedIndex === 0){
                 setTimeout(() => {
                     setDisplayedIndex(i => i + 1);
-                }, 15000);
+                }, 1500);
             }
             else if(displayedIndex <= 20){
                 setTimeout(() => {
