@@ -54,7 +54,7 @@ const Statement = ({
             if( displayedIndex === 0){
                 setTimeout(() => {
                     setDisplayedIndex(i => i + 1);
-                }, 3000);
+                }, 15000);
             }
             else if(displayedIndex <= 20){
                 setTimeout(() => {

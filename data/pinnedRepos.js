@@ -20,7 +20,7 @@ export const pinnedRepos = [
     {
         id: `devconnector`,
         name: `DevConnector`,
-        stack: ['Node','Express','React', 'MongoDB'],
+        stack: ['Express','React', 'MongoDB'],
         image: 'https://res.cloudinary.com/humayoncloud/image/upload/v1641410769/Portfolio/dev_connector_home_sggwei.png',
         longDescription: `DevConnector is a developer-focused social platform that allows users to communicate with their peers and showcase their developer credentials.  Users can create profiles (with detailed information on their technical skills, educational and work experience, and the user’s most recent GitHub repositories), view a list of all developers on the platform, and create posts that can be liked/unliked and commented on by other users. The Node.js/Express.js server features over 20 endpoints that handle authenticating users, Create/Read/Update/Delete operations for user validation (using the passport.js JSON Web Token strategy), profile and post data, and extensive input validation and error handling.`,
         deployedLink: 'https://dev-connector-786.herokuapp.com/',

@@ -8,6 +8,7 @@ const Experience = _ => {
             {
                 (experienceData ?? []).map(({company, location, designation, type, duration}, index) => {
                     const isLastElement = index === experienceData.length - 1;
+                    const isFirstElement = index === 0;
                     return (
                         <ListItem
                             key={company}
@@ -17,7 +18,7 @@ const Experience = _ => {
                         >
                             <Flex
                                 left='5px'
-                                top={0}
+                                top={isFirstElement ? 5 : 0}
                                 width='2.5px'
                                 bottom={0}
                                 height={isLastElement ? 5 : 'unset'}

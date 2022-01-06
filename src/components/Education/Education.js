@@ -8,6 +8,7 @@ const Education = () => {
             {
                 (educationData ?? []).map(({university, degree, duration, grade, location}, index) => {
                     const isLastElement = index === educationData.length - 1;
+                    const isFirstElement = index === 0;
                     return (
                         <ListItem
                             key={university}
@@ -17,7 +18,7 @@ const Education = () => {
                         >
                             <Flex
                                 left='5px'
-                                top={0}
+                                top={isFirstElement ? 5 : 0}
                                 width='2.5px'
                                 bottom={0}
                                 height={isLastElement ? 5 : 'unset'}

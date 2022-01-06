@@ -1,7 +1,7 @@
 import {
     Box,
     Flex,
-    Button, Text,
+    Button, Text,Heading
 } from '@chakra-ui/react';
 import React from 'react';
 import {NextSeo} from 'next-seo';
@@ -31,15 +31,15 @@ export default function Resume() {
                         my={16}
                     >
                         <Box>
-                            <LineHeading fontSize={{base: `1xl`, md: `2xl`}} mx='auto' textAlign='left'>
+                            <Heading fontSize={{base: `1xl`, md: `2xl`}} mx='auto' textAlign='left'>
                                 Experience
-                            </LineHeading>
+                            </Heading>
                             <Experience/>
                         </Box>
                         <Box>
-                            <LineHeading fontSize={{base: `1xl`, md: `2xl`}} mx='auto' textAlign='left'>
+                            <Heading fontSize={{base: `1xl`, md: `2xl`}} mx='auto' textAlign='left'>
                                 Education
-                            </LineHeading>
+                            </Heading>
                             <Education/>
                         </Box>
                     </Flex>
