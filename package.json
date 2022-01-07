@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Portfolio website to show case projects",
+  "description": "A Progressive Web App about Humayon Zafar",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/humayonzafar/portfolio.git"

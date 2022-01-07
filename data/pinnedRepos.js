@@ -12,7 +12,7 @@ export const pinnedRepos = [
         name: 'HZ Movies',
         stack: ['React', 'Rest'],
         id: 'HzMovies',
-        deployedLink: 'https://movie-managment-react.netlify.app/',
+        deployedLink: 'https://hzmovies-react.netlify.app/',
         html_url: 'https://github.com/humayonzafar/react-rms',
         image: 'https://res.cloudinary.com/humayoncloud/image/upload/v1641410766/Portfolio/hzmovies2_qrgnhi.png',
         longDescription: 'A movie management system built with React for learning purpose. It utilizes the Movie Db Api to fetch the latest movies. The functionality includes listing movies with a breif description with pagination, searching movies as well listing the cast with pictures with the running time, budget and revenue if available. '
