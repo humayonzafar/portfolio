@@ -9,6 +9,7 @@
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
+* [Acknowledgements](#setup)
 * [Contact](#contact)
 
 ## General Information
@@ -27,14 +28,14 @@ This is my portfolio website to showcase my skills, share my experience and show
 - Dark Mode 
 - Cross browser compatible
 - Mobile Friendly
-- 90+ score on [google page insights](https://pagespeed.web.dev/) and [gtmetrix](https://gtmetrix.com/)
+- 90+ score on [google page insights](https://res.cloudinary.com/humayoncloud/image/upload/v1641593155/Portfolio/gpi_pmyrgt.png) and [gtmetrix](https://res.cloudinary.com/humayoncloud/image/upload/v1641593156/Portfolio/gtmertix_ups4yg.png)
 
 ## Screenshots
-![Home Page](https://res.cloudinary.com/humayoncloud/image/upload/v1641583017/git/devconnector/dev_connector_home_xgdh4s.png)
+![Home Page](https://res.cloudinary.com/humayoncloud/image/upload/v1641409691/Portfolio/humayonzafar_gz3wix.png)
 
-![Profile](https://res.cloudinary.com/humayoncloud/image/upload/v1641583013/git/devconnector/devconnect-1_nzsvkk.png)
+![Resume](https://res.cloudinary.com/humayoncloud/image/upload/v1641593584/Portfolio/resume_tgeocy.png)
 
-![Post](https://res.cloudinary.com/humayoncloud/image/upload/v1641583295/git/devconnector/devconnector-3_ejznmu.png)
+![Contact](https://res.cloudinary.com/humayoncloud/image/upload/v1641593583/Portfolio/contact_nvbeeg.png)
 
 ## Setup
 Clone the project using:
@@ -45,9 +46,9 @@ Install the dependencies using:
 
 ### `npm install`
 
-Next to setup the env file from env.example. 
+Next to setup the env file from env.example. Seth **NEXT_PUBLIC_HOST** to the web app address.
 
-Get an **API key** from [Sendgrid](https://sendgrid.com/) and set the keys in env as **SENDGRID_API_KEY**. 
+Get an **API key** from [Sendgrid](https://sendgrid.com/) and set the keys in env as **SENDGRID_API_KEY**. To allow users to contact via contact form.
 
 Also set **PRIMARY_EMAIL** primary key to which emails will be sent and **SUPPORT_EMAIL** from which emails will be sent.
 
