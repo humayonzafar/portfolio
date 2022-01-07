@@ -60,6 +60,12 @@ module.exports = withMDX({
     images: {
         domains: ['i.scdn.co', 'user-images.githubusercontent.com', 'res.cloudinary.com'],
     },
+    pwa: {
+        dest: 'public',
+        register: true,
+        skipWaiting: true,
+        disable: process.env.NODE_ENV === 'development',
+    },
     async headers() {
         return [
             {
@@ -68,14 +74,4 @@ module.exports = withMDX({
             },
         ];
     }
-});
-
-module.exports = withPWA({
-    pwa: {
-        dest: 'public',
-        register: true,
-        skipWaiting: true,
-        disable: process.env.NODE_ENV === 'development',
-    },
-    reactStrictMode: true,
 });
