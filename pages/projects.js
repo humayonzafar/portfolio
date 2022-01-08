@@ -18,22 +18,7 @@ function Projects({ repos }) {
                     </LineHeading>
                     <Text mt={3}>A quick collection of my projects.</Text>
                     <VStack direction='column' my={16} width='full' height='full' maxWidth='5xl' spacing={10}>
-                        {pinnedRepos
-                            .sort(
-                                (a, b) =>
-                                    new Date(
-                                        repos.find(
-                                            (x) => x.name.toLowerCase() === a.id.toLowerCase()
-                                        )?.created_at
-                                    ).getTime() -
-                                    new Date(
-                                        repos.find(
-                                            (y) => y.name.toLowerCase() === b.id.toLowerCase()
-                                        )?.created_at
-                                    ).getTime()
-                            )
-                            .reverse()
-                            .map((data, index) => (
+                        {pinnedRepos.map((data, index) => (
                                 <PinnedProjects
                                     key={index.toString()}
                                     repo={repos.find((x) => x.name.toLowerCase() === data.id.toLowerCase())}

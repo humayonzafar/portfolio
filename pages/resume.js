@@ -1,7 +1,7 @@
 import {
     Box,
     Flex,
-    Button, Text,Heading
+    Button, Text, Heading
 } from '@chakra-ui/react';
 import React from 'react';
 import {NextSeo} from 'next-seo';
@@ -19,7 +19,7 @@ export default function Resume() {
                 width='full' px={3} minH='100vh' height='full' mx='auto' maxW='6xl' py='28'
             >
                 <Flex direction='column' alignItems='center' width='full' px={3} height='full' mx='auto'>
-                    <LineHeading fontSize={{ base: `5xl`, md: `6xl` }} mx='auto' textAlign='center'>
+                    <LineHeading fontSize={{base: `5xl`, md: `6xl`}} mx='auto' textAlign='center'>
                         Resume
                     </LineHeading>
                     <Text mt={3}>My Education, Experience and Skills.</Text>
@@ -31,15 +31,15 @@ export default function Resume() {
                         my={16}
                     >
                         <Box>
-                            <Heading fontSize={{base: `1xl`, md: `2xl`}} mx='auto' textAlign='left'>
+                            <LineHeading fontSize={'2xl'} display={'inline-block'} textAlign={{base: `center`, md: `left`}}>
                                 Experience
-                            </Heading>
+                            </LineHeading>
                             <Experience/>
                         </Box>
                         <Box>
-                            <Heading fontSize={{base: `1xl`, md: `2xl`}} mx='auto' textAlign='left'>
+                            <LineHeading fontSize={'2xl'} display={'inline-block'} textAlign={{base: `center`, md: `left`}}>
                                 Education
-                            </Heading>
+                            </LineHeading>
                             <Education/>
                         </Box>
                     </Flex>

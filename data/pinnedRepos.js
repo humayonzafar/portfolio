@@ -9,15 +9,6 @@ export const pinnedRepos = [
         html_url: 'https://github.com/humayonzafar/portfolio'
     },
     {
-        name: 'HZ Movies',
-        stack: ['React', 'Rest'],
-        id: 'HzMovies',
-        deployedLink: 'https://hzmovies-react.netlify.app/',
-        html_url: 'https://github.com/humayonzafar/react-rms',
-        image: 'https://res.cloudinary.com/humayoncloud/image/upload/v1641410766/Portfolio/hzmovies2_qrgnhi.png',
-        longDescription: 'Movie listing and details web app built with React and TMDB Api.'
-    },
-    {
         id: `devconnector`,
         name: `DevConnector`,
         stack: ['Express','React', 'MongoDB'],
@@ -25,5 +16,14 @@ export const pinnedRepos = [
         longDescription: `A social web app for connecting developers. Developers from all around the world can share their developer stories, interesting insights and grow together.`,
         deployedLink: 'https://dev-connector-786.herokuapp.com/',
         html_url: 'https://github.com/humayonzafar/dev_connector'
+    },
+    {
+        name: 'HZ Movies',
+        stack: ['React', 'TMDB Api'],
+        id: 'HzMovies',
+        deployedLink: 'https://hzmovies-react.netlify.app/',
+        html_url: 'https://github.com/humayonzafar/react-rms',
+        image: 'https://res.cloudinary.com/humayoncloud/image/upload/v1641410766/Portfolio/hzmovies2_qrgnhi.png',
+        longDescription: 'Movie listing and details web app built with React and TMDB Api.'
     }
 ];

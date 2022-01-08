@@ -13,6 +13,7 @@ const tagDict = {
     'Express': FaNodeJs,
     'MongoDB': SiMongodb,
     'Rest': SiStrapi,
+    'TMDB Api': SiStrapi,
     'Next': SiNextDotJs
 };
 

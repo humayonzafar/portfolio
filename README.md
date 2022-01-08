@@ -33,6 +33,8 @@ This is my portfolio website to showcase my skills, share my experience and show
 ## Screenshots
 ![Home Page](https://res.cloudinary.com/humayoncloud/image/upload/v1641409691/Portfolio/humayonzafar_gz3wix.png)
 
+![Projects](https://res.cloudinary.com/humayoncloud/image/upload/v1641655029/Portfolio/portfolio-projects_wh3ptg.png)
+
 ![Resume](https://res.cloudinary.com/humayoncloud/image/upload/v1641593584/Portfolio/resume_tgeocy.png)
 
 ![Contact](https://res.cloudinary.com/humayoncloud/image/upload/v1641593583/Portfolio/contact_nvbeeg.png)
