@@ -54,8 +54,8 @@ export default function Contact() {
                             borderRadius="lg"
                             m={{sm: 4, md: 5, lg: 10}}
                             p={{sm: 5, md: 5, lg: 16}}>
-                            <Box p={4}>
-                                <Wrap spacing={{base: 5, sm: 10, md: 20}}>
+                            <Box p={{base: 8, md: 4}}>
+                                <Wrap spacing={{base: 10, md: 20}}>
                                     <WrapItem>
                                         <Box>
                                             <Heading>Form Details</Heading>
