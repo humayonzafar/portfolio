@@ -3,7 +3,7 @@ import React from "react";
 const SkillImage = ({tooltip, src}) => (
     <>
         <Tooltip label={tooltip}>
-            <Image height="75px" width="75ppx" objectFit='contain' src={src}/>
+            <Image height={{base:"55px", md:"75px"}} width="auto" objectFit='contain' src={src}/>
         </Tooltip>
     </>
 );

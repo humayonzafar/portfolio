@@ -18,6 +18,7 @@ import {
     Textarea,
     FormErrorMessage,
     Link as ChakraLink,
+    useColorModeValue
 } from '@chakra-ui/react';
 import {
     MdPhone,
@@ -28,19 +29,18 @@ import {
 import {FaLinkedinIn, FaGithub, FaInstagram, FaStackOverflow} from 'react-icons/fa'
 import Link from "next/link";
 import {useContactForm} from "@/hooks/useContactForm";
-import Success from "@/components/Contact/Success";
+import Response from "@/components/Contact/Response";
 import {NextSeo} from "next-seo";
 import {social} from "@/data/social";
-import AboutTerminal from "@/components/AboutTerminal";
 import LineHeading from "@/components/LineHeading";
 
 export default function Contact() {
-    const {register, handleSubmit, errors, isSubmitting, showSuccess, onSubmit} = useContactForm();
+    const {register, handleSubmit, errors, isSubmitting, showResponse, onSubmit} = useContactForm();
     return (
         <>
             <NextSeo title='Contact'/>
             <Box
-                width='full' px={3} minH='100vh' height='full' mx='auto' maxW='6xl' py='28'
+                width='full' px={3} minH='100vh' height='full' mx='auto' maxW='7xl' py='28'
             >
                 <Flex direction='column' alignItems='center' width='full' px={3} height='full' mx='auto'>
                     <LineHeading fontSize={{ base: `5xl`, md: `6xl` }} mx='auto' textAlign='center'>
@@ -49,17 +49,17 @@ export default function Contact() {
                     <Text mt={3}>Feel free to contact me for any queries.</Text>
                     <Flex align='center' justify='center' mt={{base:'2rem', md: '1rem'}}>
                         <Box
-                            bg="var(--chakra-colors-gray-900)"
+                            bg={useColorModeValue('gray.900', 'gray.700')}
                             color="white"
                             borderRadius="lg"
-                            m={{sm: 4, md: 16, lg: 10}}
+                            m={{sm: 4, md: 5, lg: 10}}
                             p={{sm: 5, md: 5, lg: 16}}>
                             <Box p={4}>
-                                <Wrap spacing={{base: 20, sm: 3, md: 5, lg: 20}}>
+                                <Wrap spacing={{base: 5, sm: 10, md: 20}}>
                                     <WrapItem>
                                         <Box>
                                             <Heading>Form Details</Heading>
-                                            <Text mt={{sm: 3, md: 3, lg: 5}} color="white.500">
+                                            <Text mt={{sm: 1, md: 1, lg: 3}} color="white.500">
                                                 Fill up the form below to contact
                                             </Text>
                                             <Box py={{base: 5, sm: 5, md: 8, lg: 10}}>
@@ -112,9 +112,8 @@ export default function Contact() {
                                                 </VStack>
                                             </Box>
                                             <HStack
-                                                mt={{lg: 5, md: 5}}
                                                 spacing={5}
-                                                px={5}
+                                                px={3}
                                                 alignItems="flex-start">
                                                 <IconButton
                                                     as={'a'}
@@ -164,10 +163,10 @@ export default function Contact() {
                                         </Box>
                                     </WrapItem>
                                     <WrapItem>
-                                        <Box bg={showSuccess ? "var(--chakra-colors-gray-900)" : "white"} borderRadius="lg">
-                                            <Box m={8} color="#0B0E3F">
+                                        <Box bg={showResponse!=null ? useColorModeValue('gray.900', 'gray.700') : "white"} borderRadius="lg" mt={2}>
+                                            <Box m={7} color="#0B0E3F">
                                                 <VStack spacing={5}>
-                                                    {!showSuccess ?
+                                                    {showResponse==null ?
                                                         <form onSubmit={handleSubmit(onSubmit)}>
                                                             <FormControl id="name" isInvalid={errors.name}>
                                                                 <FormLabel>Your Name</FormLabel>
@@ -187,7 +186,7 @@ export default function Contact() {
                                                                     {errors.name && errors.name.message}
                                                                 </FormErrorMessage>
                                                             </FormControl>
-                                                            <FormControl id="email" isInvalid={errors.email}>
+                                                            <FormControl id="email" isInvalid={errors.email} mt={2}>
                                                                 <FormLabel>Mail</FormLabel>
                                                                 <InputGroup borderColor="#E0E1E7">
                                                                     <InputLeftElement
@@ -211,7 +210,7 @@ export default function Contact() {
                                                                 </FormErrorMessage>
                                                             </FormControl>
                                                             <FormControl id="contact_message"
-                                                                         isInvalid={errors.contact_message}>
+                                                                         isInvalid={errors.contact_message} mt={2}>
                                                                 <FormLabel>Message</FormLabel>
                                                                 <Textarea
                                                                     name="contact_message"
@@ -223,8 +222,8 @@ export default function Contact() {
                                                                     {...register('contact_message', {
                                                                         required: 'Message is required',
                                                                         minLength: {
-                                                                            value: 15,
-                                                                            message: 'Message should be at-least 15 characters long'
+                                                                            value: 10,
+                                                                            message: 'Message should be at-least 10 characters long'
                                                                         },
                                                                         maxLength: {
                                                                             value: 300,
@@ -254,7 +253,7 @@ export default function Contact() {
                                                                 </Button>
                                                             </FormControl>
                                                         </form>
-                                                        : <Success/>}
+                                                        : <Response showResponse={showResponse}/>}
                                                 </VStack>
                                             </Box>
                                         </Box>

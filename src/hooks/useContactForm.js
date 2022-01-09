@@ -3,17 +3,17 @@ import {useState} from "react";
 
 export const useContactForm = () => {
     const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm({mode: 'onChange'});
-    const [showSuccess, setShowSuccess] = useState(false);
+    const [showResponse, setShowResponse] = useState(true);
     const onSubmit = async (formData) => {
         try {
-            await fetch('/api/mail', {
+            const response = await fetch('/api/mail', {
                 method: "POST",
                 body: JSON.stringify(formData)
             });
-            setShowSuccess(true);
+            setShowResponse(response.status===200);
         } catch (err) {
             console.log(err);
         }
     }
-    return {register, handleSubmit, errors, isSubmitting, showSuccess, onSubmit}
+    return {register, handleSubmit, errors, isSubmitting, showResponse, onSubmit}
 }

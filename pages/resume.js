@@ -28,22 +28,27 @@ export default function Resume() {
                         justifyContent={{base: 'center', md: 'space-between'}}
                         height='full'
                         width='full'
-                        my={16}
+                        mt={16}
+                        mb={8}
                     >
                         <Box>
-                            <LineHeading fontSize={'2xl'} display={'inline-block'} textAlign={{base: `center`, md: `left`}}>
-                                Experience
-                            </LineHeading>
+                            <Box textAlign={{base: `center`, sm: `center`, md: `left`}}>
+                                <LineHeading fontSize={'2xl'} display={'inline-block'}>
+                                    Experience
+                                </LineHeading>
+                            </Box>
                             <Experience/>
                         </Box>
-                        <Box>
-                            <LineHeading fontSize={'2xl'} display={'inline-block'} textAlign={{base: `center`, md: `left`}}>
-                                Education
-                            </LineHeading>
+                        <Box mt={{base: 4, md: 0, lg: 0}}>
+                            <Box textAlign={{base: `center`, sm: `center`, md: `left`}}>
+                                <LineHeading fontSize={'2xl'} display={'inline-block'} textAlign={{base: `center`, sm: `center`, md: `left`}}>
+                                    Education
+                                </LineHeading>
+                            </Box>
                             <Education/>
                         </Box>
                     </Flex>
-                    <Skills/>
+                    <Skills mb={8}/>
                     <Box textAlign='center' width='full' mt='2rem' mx='auto'>
                         <Button
                             as='a'

@@ -52,7 +52,9 @@ export default function Home() {
                                 flexGrow={3}
                                 borderRadius='2xl'
                                 boxSize='250px'
-                                src='https://res.cloudinary.com/humayoncloud/image/upload/v1640542101/Portfolio/profile-pic_dovm5o.png'
+                                width='250px'
+                                heigth='250px'
+                                src='https://res.cloudinary.com/humayoncloud/image/upload/f_auto,e_sharpen/v1640542101/Portfolio/profile-pic_dovm5o.png'
                                 objectFit='cover'
                                 alt='Humayon Zafar'
                                 onLoad={() => setImageLoaded(true)}
