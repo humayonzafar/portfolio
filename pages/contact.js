@@ -163,7 +163,7 @@ export default function Contact() {
                                         </Box>
                                     </WrapItem>
                                     <WrapItem>
-                                        <Box bg={showResponse!=null ? useColorModeValue('gray.900', 'gray.700') : "white"} borderRadius="lg" mt={2}>
+                                        <Box bg={showResponse == null ? "white" : ""} borderRadius="lg" mt={2}>
                                             <Box m={7} color="#0B0E3F">
                                                 <VStack spacing={5}>
                                                     {showResponse==null ?
@@ -223,7 +223,7 @@ export default function Contact() {
                                                                         required: 'Message is required',
                                                                         minLength: {
                                                                             value: 10,
-                                                                            message: 'Message should be at-least 10 characters long'
+                                                                            message: 'Message should be at least 10 characters long'
                                                                         },
                                                                         maxLength: {
                                                                             value: 300,
