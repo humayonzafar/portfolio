@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Heading, useColorModeValue} from '@chakra-ui/react';
+import {Box, Heading, useColorModeValue, Text} from '@chakra-ui/react';
 import {CheckCircleIcon, CloseIcon} from '@chakra-ui/icons';
 
 export default function Response({showResponse}) {
@@ -12,6 +12,9 @@ export default function Response({showResponse}) {
             <Heading as="h3" size="xl" mt={6} mb={2}>
                 {showResponse ? 'Thank you for getting in touch!' : 'Something went wrong!'}
             </Heading>
+            <Text>
+                {showResponse && 'I will respond as soon as possible.' }
+            </Text>
         </Box>
     );
 }
