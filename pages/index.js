@@ -52,8 +52,8 @@ export default function Home() {
                                 flexGrow={3}
                                 borderRadius='2xl'
                                 boxSize='250px'
-                                width={250}
-                                height={250}
+                                htmlWidth={250}
+                                htmlHeight={250}
                                 src='https://res.cloudinary.com/humayoncloud/image/upload/f_auto,e_sharpen/v1640542101/Portfolio/profile-pic_dovm5o.png'
                                 objectFit='cover'
                                 alt='Profile Picture'
