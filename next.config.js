@@ -1,4 +1,8 @@
 const withPWA = require('next-pwa');
+const withMDX = require('@next/mdx')({
+    extension: /\.(md|mdx)$/,
+});
+const withPlugins = require('next-compose-plugins');
 
 const ContentSecurityPolicy = `
   default-src 'self';
@@ -50,15 +54,8 @@ const securityHeaders = [
     },
 ];
 
-const withMDX = require('@next/mdx')({
-    extension: /\.(md|mdx)$/,
-});
 
-module.exports = withPWA({
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === 'development',
+const mdx = withMDX({
     pageExtensions: ['js', 'jsx'],
     webpack5: true,
     images: {
@@ -73,3 +70,19 @@ module.exports = withPWA({
         ];
     }
 });
+
+
+const pwa = withPWA(
+    {pwa: {
+            dest: 'public',
+            register: true,
+            skipWaiting: true,
+            disable: process.env.NODE_ENV === 'development',
+        }
+    }
+)
+
+module.exports = withPlugins([
+    mdx,
+    pwa
+]);
