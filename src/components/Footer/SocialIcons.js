@@ -11,6 +11,7 @@ const SocialIcons = ({ children, href, label })=>{
                 h={8}
                 cursor='pointer'
                 as='a'
+                rel="noopener"
                 href={href}
                 target={'_blank'}
                 display='inline-flex'
