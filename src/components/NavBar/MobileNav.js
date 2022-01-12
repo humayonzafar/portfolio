@@ -18,9 +18,9 @@ if(typeof window !== "undefined") {
     window.addEventListener('appinstalled', (evt) => {
         appInstalled = true;
     });
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        appInstalled = true;
-    }
+    // if (window.matchMedia('(display-mode: standalone)').matches) {
+    //     appInstalled = true;
+    // }
 }
 
 function MobileNav({links, handleInstallClick}) {
