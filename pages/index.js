@@ -9,10 +9,13 @@ import {
     Link as ChakraLink,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import React, {useState, useRef, useEffect} from 'react';
 import {NextSeo} from 'next-seo';
-import AboutTerminal from "../src/components/AboutTerminal";
-
+const AboutTerminal = dynamic(
+    () => import('../src/components/AboutTerminal'),
+    { loading: () => <p>...</p> }
+)
 export default function Home() {
     const [imageLoaded, setImageLoaded] = useState(false);
     const imageRef = useRef(null);

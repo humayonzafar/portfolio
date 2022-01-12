@@ -13,6 +13,16 @@ import Link from 'next/link'
 import {AiOutlineMenu} from 'react-icons/ai'
 import ToggleTheme from './ToggleTheme'
 
+let appInstalled = false;
+if(typeof window !== "undefined") {
+    window.addEventListener('appinstalled', (evt) => {
+        appInstalled = true;
+    });
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+        appInstalled = true;
+    }
+}
+
 function MobileNav({links, handleInstallClick}) {
     const mobileNav = useDisclosure()
     return (
@@ -59,11 +69,16 @@ function MobileNav({links, handleInstallClick}) {
                         ))
                     }
                     if(link.link==='#'){
-                        return (
-                            <Button key={index.toString()} as={ChakraLink} w='full' mt={index===0?16:0} mx={2} variant='ghost' onClick={handleInstallClick}>
+                        if(!appInstalled){
+                            return  <></>;
+                        }
+                        else{
+                            return (
+                                <Button key={index.toString()} as={ChakraLink} w='full' mt={index===0?16:0} mx={2} variant='ghost' onClick={handleInstallClick}>
                                     {link.name}
-                            </Button>
-                        )
+                                </Button>
+                            )
+                        }
                     }
                     else{
                         return (

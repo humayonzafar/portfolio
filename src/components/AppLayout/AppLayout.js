@@ -1,11 +1,12 @@
 import React from 'react'
 import {Box, useColorModeValue} from '@chakra-ui/react'
-import UpDown from '../Animations'
-import SVG from '../Svg'
+import dynamic from 'next/dynamic'
 import {useRouter} from 'next/router'
 import {NextSeo} from 'next-seo'
-import Nav from '../NavBar/Nav'
-import Footer from '../Footer/Footer'
+const UpDown = dynamic(() => import('../Animations'))
+const Nav = dynamic(() => import('../NavBar/Nav'))
+const Footer = dynamic(() => import('../Footer/Footer'))
+const SVG = dynamic(() => import('../Svg'))
 
 const AppLayout = ({children}) => {
     const router = useRouter()
