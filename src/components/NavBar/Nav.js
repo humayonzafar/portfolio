@@ -32,6 +32,29 @@ const links = [
     {
         name: `Contact`,
         link: `/contact`,
+    }
+];
+
+const mobileLinks = [
+    {
+        name: `Home`,
+        link: `/`,
+    },
+    {
+        name: `Projects`,
+        link: `/projects`,
+    },
+    {
+        name: `Resume`,
+        link: `/resume`,
+    },
+    {
+        name: `Contact`,
+        link: `/contact`,
+    },
+    {
+        name: `Install App`,
+        link: `#`,
     },
 ];
 
@@ -43,7 +66,7 @@ if(typeof window !== "undefined") {
         e.preventDefault();
         // Stash the event so it can be triggered later.
         prompt = e;
-        console.log('inside promt');
+        console.log('inside promt',prompt);
     });
 }
 
@@ -56,7 +79,12 @@ function Nav() {
     const {pathname} = useRouter();
 
     const blogPage = pathname === '/blog/[slug]';
-
+    const handleInstallClick = (e) => {
+        console.log(e,'prompt',prompt);
+        if (prompt) {
+            prompt.prompt();  // Show the install prompt
+        }
+    };
     useEffect(() => {
         if (blogPage) {
             const newWidth = y / max;
@@ -134,7 +162,7 @@ function Nav() {
                             )}
                         </Link>
                     </Box>
-                    <MobileNav links={links}/>
+                    <MobileNav links={mobileLinks} handleInstallClick={handleInstallClick}/>
                     <DesktopNav links={links}/>
                 </Flex>
             </chakra.nav>

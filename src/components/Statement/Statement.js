@@ -15,7 +15,7 @@ const Statement = ({
     const [displayedIndex, setDisplayedIndex] = React.useState(0);
     const [showResult, setShowResult] = React.useState(false);
     const bp = useBreakpoint();
-    let message = 'Press press enter to learn more...';
+    let message = 'Please press enter to learn more...';
     useHotkeys('enter', onEnterKeyPressed);
     function onEnterKeyPressed(){
             if (thisIndex === visibleIndex && !enterPress) {

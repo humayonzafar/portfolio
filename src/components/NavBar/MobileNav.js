@@ -13,7 +13,7 @@ import Link from 'next/link'
 import {AiOutlineMenu} from 'react-icons/ai'
 import ToggleTheme from './ToggleTheme'
 
-function MobileNav({links}) {
+function MobileNav({links, handleInstallClick}) {
     const mobileNav = useDisclosure()
     return (
         <Box display={{md: `none`}}>
@@ -58,13 +58,22 @@ function MobileNav({links}) {
                             </Link>
                         ))
                     }
-                    return (
-                        <Link href={link.link} key={`${index.toString()}link`} passHref >
-                            <Button key={index.toString()} as={ChakraLink} w='full' mt={index===0?16:0} mx={2} variant='ghost'>
-                                {link.name}
+                    if(link.link==='#'){
+                        return (
+                            <Button key={index.toString()} as={ChakraLink} w='full' mt={index===0?16:0} mx={2} variant='ghost' onClick={handleInstallClick}>
+                                    {link.name}
                             </Button>
-                        </Link>
-                    )
+                        )
+                    }
+                    else{
+                        return (
+                            <Link href={link.link} key={`${index.toString()}link`} passHref >
+                                <Button key={index.toString()} as={ChakraLink} w='full' mt={index===0?16:0} mx={2} variant='ghost'>
+                                    {link.name}
+                                </Button>
+                            </Link>
+                        )
+                    }
                 })}
             </VStack>
         </Box>
