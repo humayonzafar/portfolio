@@ -25,7 +25,10 @@ if (typeof window !== "undefined") {
         // Prevent the infobar from appearing on mobile
         e.preventDefault();
         prompt = e;
-    });
+    },{once: true});
+    window.addEventListener("appinstalled", evt => {
+        appInstalled = true;
+    },{once: true});
 }
 
 
