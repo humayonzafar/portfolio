@@ -14,23 +14,39 @@ import {AiOutlineMenu} from 'react-icons/ai'
 import ToggleTheme from './ToggleTheme'
 
 let appInstalled = false;
+let prompt;
+
 if (typeof window !== "undefined") {
         const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+        console.log(isStandalone,'isStandalone',document.referrer,navigator.standalone);
         if (document.referrer.startsWith('android-app://')) {
             appInstalled = true;
         } else if (navigator.standalone || isStandalone) {
             appInstalled = true;
         }
+
+    window.addEventListener('beforeinstallprompt', function (e) {
+        // Prevent the infobar from appearing on mobile
+        e.preventDefault();
+        prompt = e;
+    });
 }
 if (typeof navigator !== "undefined") {
-    const relatedApps = await navigator.getInstalledRelatedApps();
+    const relatedApps = async ()=> await navigator.getInstalledRelatedApps();
     relatedApps.forEach((app) => {
         console.log(app.id, app.platform, app.url);
     });
 }
 
-function MobileNav({links, handleInstallClick}) {
-    const mobileNav = useDisclosure()
+
+function MobileNav({links}) {
+    const mobileNav = useDisclosure();
+    const handleInstallClick = (e) => {
+        console.log(e,'prompt',prompt);
+        if (prompt) {
+            prompt.prompt();  // Show the install prompt
+        }
+    };
     return (
         <Box display={{md: `none`}}>
             <ToggleTheme/>

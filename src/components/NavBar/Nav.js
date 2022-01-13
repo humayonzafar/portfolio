@@ -58,15 +58,6 @@ const mobileLinks = [
     },
 ];
 
-let prompt;
-if(typeof window !== "undefined") {
-    window?.addEventListener('beforeinstallprompt', function (e) {
-        // Prevent the infobar from appearing on mobile
-        e.preventDefault();
-        prompt = e;
-    });
-}
-
 
 function Nav() {
     const router = useRouter();
@@ -76,12 +67,7 @@ function Nav() {
     const {pathname} = useRouter();
 
     const blogPage = pathname === '/blog/[slug]';
-    const handleInstallClick = (e) => {
-        console.log(e,'prompt',prompt);
-        if (prompt) {
-            prompt.prompt();  // Show the install prompt
-        }
-    };
+
     useEffect(() => {
         if (blogPage) {
             const newWidth = y / max;
@@ -159,7 +145,7 @@ function Nav() {
                             )}
                         </Link>
                     </Box>
-                    <MobileNav links={mobileLinks} handleInstallClick={handleInstallClick}/>
+                    <MobileNav links={mobileLinks}/>
                     <DesktopNav links={links}/>
                 </Flex>
             </chakra.nav>
