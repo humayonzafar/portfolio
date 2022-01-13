@@ -32,9 +32,11 @@ if (typeof window !== "undefined") {
     });
 }
 if (typeof navigator !== "undefined") {
-    const relatedApps = async ()=> await navigator.getInstalledRelatedApps();
-    relatedApps.forEach((app) => {
-        console.log(app.id, app.platform, app.url);
+    navigator.getInstalledRelatedApps().then(relatedApps=>{
+        console.log(relatedApps,navigator,'relatedApps');
+        relatedApps.forEach((app) => {
+            console.log(app.id, app.platform, app.url);
+        });
     });
 }
 
