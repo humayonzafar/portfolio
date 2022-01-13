@@ -60,13 +60,10 @@ const mobileLinks = [
 
 let prompt;
 if(typeof window !== "undefined") {
-    console.log('window',window);
     window?.addEventListener('beforeinstallprompt', function (e) {
-        // Prevent the mini-infobar from appearing on mobile
+        // Prevent the infobar from appearing on mobile
         e.preventDefault();
-        // Stash the event so it can be triggered later.
         prompt = e;
-        console.log('inside promt',prompt);
     });
 }
 

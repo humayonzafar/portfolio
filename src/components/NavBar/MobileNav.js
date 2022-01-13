@@ -14,13 +14,13 @@ import {AiOutlineMenu} from 'react-icons/ai'
 import ToggleTheme from './ToggleTheme'
 
 let appInstalled = false;
-if(typeof window !== "undefined") {
-    window.addEventListener('appinstalled', (evt) => {
-        appInstalled = true;
-    });
-    // if (window.matchMedia('(display-mode: standalone)').matches) {
-    //     appInstalled = true;
-    // }
+if (typeof window !== "undefined") {
+    window.matchMedia('(display-mode: standalone)')
+        .addEventListener('change', ({matches}) => {
+            if (!matches) {
+                appInstalled = true;
+            }
+        });
 }
 
 function MobileNav({links, handleInstallClick}) {
@@ -69,7 +69,7 @@ function MobileNav({links, handleInstallClick}) {
                         ))
                     }
                     if(link.link==='#'){
-                        if(!appInstalled){
+                        if(appInstalled){
                             return  <></>;
                         }
                         else{
