@@ -15,12 +15,18 @@ import ToggleTheme from './ToggleTheme'
 
 let appInstalled = false;
 if (typeof window !== "undefined") {
-    window.matchMedia('(display-mode: standalone)')
-        .addEventListener('change', ({matches}) => {
-            if (!matches) {
-                appInstalled = true;
-            }
-        });
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+        if (document.referrer.startsWith('android-app://')) {
+            appInstalled = true;
+        } else if (navigator.standalone || isStandalone) {
+            appInstalled = true;
+        }
+}
+if (typeof navigator !== "undefined") {
+    const relatedApps = await navigator.getInstalledRelatedApps();
+    relatedApps.forEach((app) => {
+        console.log(app.id, app.platform, app.url);
+    });
 }
 
 function MobileNav({links, handleInstallClick}) {
