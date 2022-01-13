@@ -24,8 +24,8 @@
       "type": "image/png"
     },
     {
-      "src": "android-icon-144x144.jpg",
-      "sizes": "144x144",
+      "src": "android-144x144.png",
+      "sizes": "png",
       "type": "image/jpg"
     },
     {

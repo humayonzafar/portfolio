@@ -31,14 +31,6 @@ if (typeof window !== "undefined") {
         prompt = e;
     });
 }
-if (typeof navigator !== "undefined") {
-    navigator.getInstalledRelatedApps().then(relatedApps=>{
-        console.log(relatedApps,navigator,'relatedApps');
-        relatedApps.forEach((app) => {
-            console.log(app.id, app.platform, app.url);
-        });
-    });
-}
 
 
 function MobileNav({links}) {
