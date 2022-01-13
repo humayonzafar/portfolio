@@ -18,13 +18,9 @@ let prompt;
 
 if (typeof window !== "undefined") {
         const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-        console.log(isStandalone,'isStandalone',document.referrer,navigator.standalone);
-        if (document.referrer.startsWith('android-app://')) {
-            appInstalled = true;
-        } else if (navigator.standalone || isStandalone) {
+        if (document.referrer.startsWith('android-app://') || navigator.standalone || isStandalone) {
             appInstalled = true;
         }
-
     window.addEventListener('beforeinstallprompt', function (e) {
         // Prevent the infobar from appearing on mobile
         e.preventDefault();
@@ -36,7 +32,6 @@ if (typeof window !== "undefined") {
 function MobileNav({links}) {
     const mobileNav = useDisclosure();
     const handleInstallClick = (e) => {
-        console.log(e,'prompt',prompt);
         if (prompt) {
             prompt.prompt();  // Show the install prompt
         }
@@ -85,7 +80,7 @@ function MobileNav({links}) {
                         ))
                     }
                     if(link.link==='#'){
-                        if(appInstalled){
+                        if(appInstalled && prompt==null){
                             return  <></>;
                         }
                         else{
