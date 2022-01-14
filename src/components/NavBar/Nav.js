@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     Box,
     Flex,
@@ -11,7 +11,6 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {transparentize} from '@chakra-ui/theme-tools';
 import useScrollPosition from '../../../src/hooks/useScrollPosition';
-import {useEffect} from 'react';
 import dynamic from "next/dynamic";
 const AnimatedTitle = dynamic(() => import('@/components/NavBar/AnimatedTitle'))
 const MobileNav = dynamic(() => import('./MobileNav'))
@@ -66,6 +65,10 @@ function Nav() {
     const [width, setWidth] = useState(0);
     const {y, max} = useScrollPosition();
     const {pathname} = useRouter();
+    const [showAnimatedTitle,setShowAnimatedTitle] = useState(false);
+    useEffect(() => {
+        setShowAnimatedTitle(true);
+    }, []);
 
     const blogPage = pathname === '/blog/[slug]';
 
@@ -109,9 +112,9 @@ function Nav() {
                 >
                     <Box display='flex' alignContent='center'>
                         <Link href='/' passHref>
-                            {router.asPath === '/' ? (
-                                <AnimatedTitle/>
-                            ) : (
+                            {router.asPath === '/' ?
+                                 showAnimatedTitle ? <AnimatedTitle/> : <></>
+                             : (
                                 <ChakraLink
                                     fontSize='lg'
                                     margin='auto'

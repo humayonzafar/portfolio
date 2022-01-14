@@ -17,7 +17,7 @@ import {social} from "@/data/social";
 
 const Footer = () => {
     const {colorMode} = useColorMode()
-
+    const date = new Date().getFullYear();
     return (
         <Box
             bg={useColorModeValue(`gray.50`, `gray.900`)}
@@ -33,20 +33,9 @@ const Footer = () => {
                 spacing={4}
                 align='center'
             >
-                <Flex direction='row' maxW='full' mx={{base: `auto`, md: 5}} alignItems='center'>
-
-                    <Flex ml={2} isTruncated>
-                        <chakra.span
-                            mx={2}
-                            color={useColorModeValue(`gray.600`, `gray.300`)}
-                            display={{base: `hidden`, sm: `block`}}
-                        >
-                            {/*  Insert emoji  */}
-                        </chakra.span>
-                        <chakra.p color='gray.600' isTruncated maxW='full'>
-                        </chakra.p>
-                    </Flex>
-                </Flex>
+                <Text color={useColorModeValue(`gray.800`, `white`)} alignSelf='center' mx='auto' fontSize='sm'>
+                    © {date} Humayon Zafar{" "}
+                </Text>
                 <Text display='flex' alignSelf='center' mx='auto'>
                     Built with:
                     <Tooltip label='NextJS'>
