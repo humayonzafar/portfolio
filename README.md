@@ -62,7 +62,7 @@ And voila, you are all set.
 - This project was inspired by [michael-hall](https://github.com/mah51/).
 
 ## Contact
-Created by [@humayonzafar](https://www.humayonzafar.com/) - feel free to contact me!
+Created by [@humayonzafar](https://www.humayonzafar.com/contact) - feel free to contact me!
 
 ## License
 
