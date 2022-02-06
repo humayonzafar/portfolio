@@ -73,7 +73,8 @@ const mdx = withMDX({
 
 
 const pwa = withPWA(
-    {pwa: {
+    {
+        pwa: {
             dest: 'public',
             register: true,
             skipWaiting: true,
@@ -82,7 +83,13 @@ const pwa = withPWA(
     }
 )
 
-module.exports = withPlugins([
-    mdx,
-    pwa
-]);
+module.exports = withPWA(
+    {
+        pwa: {
+            dest: 'public',
+            register: true,
+            skipWaiting: true,
+            disable: process.env.NODE_ENV === 'development',
+        }
+    }
+);
