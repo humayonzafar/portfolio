@@ -39,6 +39,10 @@ This is my portfolio website to showcase my skills, share my experience and show
 
 ![Contact](https://res.cloudinary.com/humayoncloud/image/upload/v1641593583/Portfolio/contact_nvbeeg.png)
 
+![GT Metrix](https://res.cloudinary.com/humayoncloud/image/upload/v1641593156/Portfolio/gtmertix_ups4yg.png)
+
+![Google Page Insights](https://res.cloudinary.com/humayoncloud/image/upload/v1641593155/Portfolio/gpi_pmyrgt.png)
+
 ## Setup
 Clone the project using:
 
@@ -62,7 +66,7 @@ And voila, you are all set.
 - This project was inspired by [michael-hall](https://github.com/mah51/).
 
 ## Contact
-Created by [@humayonzafar](https://www.humayonzafar.com/) - feel free to contact me!
+Created by [@humayonzafar](https://www.humayonzafar.com/contact) - feel free to contact me!
 
 ## License
 
