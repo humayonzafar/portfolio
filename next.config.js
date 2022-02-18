@@ -90,6 +90,20 @@ module.exports = withPWA(
             register: true,
             skipWaiting: true,
             disable: process.env.NODE_ENV === 'development',
+        },
+        pageExtensions: ['js', 'jsx'],
+        webpack5: true,
+        images: {
+            domains: ['i.scdn.co', 'user-images.githubusercontent.com', 'res.cloudinary.com'],
+        },
+        async headers() {
+            return [
+                {
+                    source: '/(.*)',
+                    headers: securityHeaders,
+                },
+            ];
         }
-    }
+    },
+
 );
