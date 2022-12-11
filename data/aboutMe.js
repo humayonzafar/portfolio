@@ -10,7 +10,7 @@ const info = (props) => [
     },
     {
         input: 'currentLocation',
-        result: '"Lahore, Pakistan"',
+        result: '"Berlin, Germany"',
     },
     {
         input: 'interests',
