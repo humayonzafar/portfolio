@@ -93,7 +93,7 @@ export default function Contact() {
                                                         </Button>
                                                     </Link>
                                                     <Link
-                                                        href='https://www.google.com/maps/place/Lahore,+Punjab,+Pakistan/@31.4828641,74.194306,11z/data=!3m1!4b1!4m5!3m4!1s0x39190483e58107d9:0xc23abe6ccc7e2462!8m2!3d31.5203696!4d74.3587473'
+                                                        href='https://www.google.com/maps/place/Berlin+Cathedral/@52.520815,13.4094191,15z/data=!4m12!1m6!3m5!1s0x0:0xc8fafc484349e4a1!2sBerliner+Fernsehturm!8m2!3d52.520815!4d13.4094191!3m4!1s0x0:0x780e68d5b02f8afc!8m2!3d52.5190608!4d13.401078'
                                                         passHref isExternal>
                                                         <Button
                                                             as={ChakraLink}
@@ -106,7 +106,7 @@ export default function Contact() {
                                                             _hover={{color: 'brand.600', textDecoration: 'none'}}
                                                             leftIcon={<MdLocationOn color="brand.300" size="20px"
                                                                                     _hover={{color: 'brand.600'}}/>}>
-                                                            Lahore, Pakistan
+                                                            Berlin, Germany
                                                         </Button>
                                                     </Link>
                                                 </VStack>
