@@ -36,6 +36,7 @@ import LineHeading from "@/components/LineHeading";
 
 export default function Contact() {
     const {register, handleSubmit, errors, isSubmitting, showResponse, onSubmit} = useContactForm();
+    const colorModeValue = useColorModeValue('gray.900', 'gray.700');
     return (
         <>
             <NextSeo title='Contact'/>
@@ -49,7 +50,7 @@ export default function Contact() {
                     <Text mt={3}>Feel free to contact me for any queries.</Text>
                     <Flex align='center' justify='center' mt={{base:'2rem', md: '1rem'}}>
                         <Box
-                            bg={useColorModeValue('gray.900', 'gray.700')}
+                            bg={colorModeValue}
                             color="white"
                             borderRadius="lg"
                             m={{sm: 4, md: 5, lg: 10}}
