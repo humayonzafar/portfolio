@@ -81,6 +81,9 @@
     "prettier": "2.4.1",
     "rehype": "12.0.0"
   },
+  "engines": {
+    "node": ">=18.x"
+  },
   "author": "Humayon Zafar",
   "license": "MIT",
   "bugs": {
