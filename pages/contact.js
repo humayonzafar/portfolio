@@ -65,20 +65,6 @@ export default function Contact() {
                                             </Text>
                                             <Box py={{base: 5, sm: 5, md: 8, lg: 10}}>
                                                 <VStack pl={0} spacing={3} alignItems="flex-start">
-                                                    <Link href='tel:+923364434480' passHref>
-                                                        <Button
-                                                            as={ChakraLink}
-                                                            size="md"
-                                                            height="48px"
-                                                            width="auto"
-                                                            variant="ghost"
-                                                            color="white"
-                                                            _hover={{color: 'brand.600', textDecoration: 'none'}}
-                                                            leftIcon={<MdPhone color="brand.300" size="20px"
-                                                                               _hover={{color: 'brand.600'}}/>}>
-                                                            +92 336 4434480
-                                                        </Button>
-                                                    </Link>
                                                     <Link href='mailto: humayonhere@gmail.com' passHref>
                                                         <Button
                                                             as={ChakraLink}

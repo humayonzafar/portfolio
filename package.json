@@ -11,9 +11,9 @@
     "starter"
   ],
   "scripts": {
-    "dev": "next",
-    "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
-    "build": "next build",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider next",
+    "debug": "cross-env NODE_OPTIONS='--inspect --openssl-legacy-provider' next dev",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider next build",
     "start": "next start",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",

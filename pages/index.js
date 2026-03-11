@@ -87,15 +87,12 @@ export default function Home() {
                             </Heading>
                             <chakra.p maxW='650px' textAlign={{base: `center`, lg: `left`}} fontSize='xl' mt={2}>
                                 I am a {' '}
-                                <Box as='span' bgGradient={`linear(to-r, ${useColorModeValue(`brand.600`, `brand.400`)}, ${useColorModeValue(`teal.600`, `teal.400`)}, ${useColorModeValue(`blue.600`, `blue.300`)})`} className='moving-grad' bgClip='text'>FullStack Developer</Box>
+                                <Box as='span' bgGradient={`linear(to-r, ${useColorModeValue(`brand.600`, `brand.400`)}, ${useColorModeValue(`teal.600`, `teal.400`)}, ${useColorModeValue(`blue.600`, `blue.300`)})`} className='moving-grad' bgClip='text'>FullStack TypeScript Developer</Box>
                                 {' '} dedicated in developing state-of-the-art applications,
                                 building great user experiences by bringing simplicity to life and constantly learning.
                             </chakra.p>
                             <chakra.p maxW='650px' textAlign={{base: `center`, lg: `left`}} fontSize='xl' mt={2}>
                                 Skilled in technologies like {' '}
-                                <Link href='https://laravel.com/' passHref isExternal>
-                                    <ChakraLink>Laravel</ChakraLink>
-                                </Link>{', '}
                                 <Link href='https://nodejs.org/en/' passHref isExternal>
                                     <ChakraLink>Node</ChakraLink>
                                 </Link>{', '}
@@ -105,9 +102,9 @@ export default function Home() {
                                 <Link href='https://reactjs.org/' passHref isExternal>
                                     <ChakraLink>React js</ChakraLink>
                                 </Link>{' ,'}
-                                <Link href='https://wordpress.com/' passHref isExternal>
-                                    <ChakraLink>Wordpress</ChakraLink>
-                                </Link>{' . '}
+                                <Link href='https://laravel.com/' passHref isExternal>
+                                    <ChakraLink>Laravel</ChakraLink>
+                                </Link>{'. '}
                                 I am a team player and always looking for new challenges and ways to improve myself.
                             </chakra.p>
                         </Flex>

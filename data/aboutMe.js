@@ -22,7 +22,7 @@ const info = (props) => [
     },
     {
         input: 'skills',
-        result: '["Laravel", "Node", "Express", "React", "Vue", "Wordpress"]',
+        result: '["Node", "Express", "React", "Vue", "Laravel"]',
     },
     {
         input: 'contactMe',

@@ -59,7 +59,7 @@ export default function Resume() {
                             size='lg'
                             rightIcon={<FaFileDownload/>}
                             _hover={{color: 'white', bg: 'brand.800'}}
-                            href='https://drive.google.com/file/d/15ovXVBOQ0sD1jXHRkY8mPv99o4wgWY7J/view'
+                            href='https://drive.google.com/file/d/10IkKtl2btFI5OTbdLrOer-hLd83AWH2C/view?usp=sharing'
                         >
                             Download Resume
                         </Button>
