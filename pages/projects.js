@@ -72,9 +72,20 @@ function Projects({ repos }) {
 }
 
 export async function getStaticProps(){
-    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST }/api/github`);
-    const { stars, repos, followers } = await response.json();
-    return { props: { stars, repos, followers, revalidate: 600 } };
+    const userResponse = await fetch(`https://api.github.com/users/humayonzafar`);
+    const userReposResponse = await fetch(`https://api.github.com/users/humayonzafar/repos?per_page=100`);
+
+    const user = await userResponse.json();
+    const repositories = await userReposResponse.json();
+
+    const notForked = repositories.filter((repo) => !repo.fork);
+    const stars = notForked.reduce((a, r) => a + r.stargazers_count, 0) || null;
+
+    const repos = notForked.map(({ id, name, html_url, created_at, pushed_at, language, description, fork, stargazers_count }) => ({
+        id, name, html_url, created_at, pushed_at, language, description, fork, stargazers_count,
+    }));
+
+    return { props: { stars, repos, followers: user.followers }, revalidate: 600 };
 }
 
 export default Projects;
